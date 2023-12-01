@@ -1,3 +1,3 @@
-Mobile Application on Graduation Project using Flutter 
+Mobile Application with Flutter for Graduation Project
 
 
