@@ -40,18 +40,18 @@ class _SplashScreenState extends State<SplashScreen>
 
     Timer(const Duration(seconds: 3), () {
       setState(() {
-        _fontSize = 1.4;
+        _fontSize = 1.58;
       });
     });
 
     Timer(const Duration(seconds: 3), () {
       setState(() {
-        _containerSize = 2;
+        _containerSize = 1.3;
         _containerOpacity = 1;
       });
     });
 
-    Timer(const Duration(seconds: 5), () {
+    Timer(const Duration(seconds: 6), () {
       GoRouter.of(context).pushReplacement(AppRouters.khometest);
     });
   }
@@ -68,54 +68,94 @@ class _SplashScreenState extends State<SplashScreen>
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: const Color(0xffE9E9E9),
-      body: Center(
-        child: Stack(
-          children: [
-            Column(
-              children: [
-                AnimatedContainer(
-                    duration: const Duration(milliseconds: 2000),
-                    curve: Curves.fastLinearToSlowEaseIn,
-                    height: height / _fontSize),
-                AnimatedOpacity(
-                  duration: const Duration(milliseconds: 3000),
-                  opacity: _textOpacity,
-                  child: Text(
-                    'Health Care Connection',
-                    style: TextStyle(
-                      color: const Color(0xff0165FC),
-                      fontWeight: FontWeight.bold,
-                      fontSize: animation1!.value,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Center(
-              child: AnimatedOpacity(
-                duration: const Duration(milliseconds: 3000),
-                curve: Curves.fastLinearToSlowEaseIn,
-                opacity: _containerOpacity,
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 3000),
-                  curve: Curves.fastLinearToSlowEaseIn,
-                  height: width / _containerSize,
-                  width: width / _containerSize,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  // child: Image.asset('assets/images/file_name.png')
-                  child: Image.asset('assets/images/LOGO 1.png'),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+      body: AnimatedLogoAndName(
+          height: height,
+          fontSize: _fontSize,
+          textOpacity: _textOpacity,
+          animation1: animation1,
+          containerOpacity: _containerOpacity,
+          width: width,
+          containerSize: _containerSize),
     );
   }
 }
 
+class AnimatedLogoAndName extends StatelessWidget {
+  const AnimatedLogoAndName({
+    super.key,
+    required this.height,
+    required double fontSize,
+    required double textOpacity,
+    required this.animation1,
+    required double containerOpacity,
+    required this.width,
+    required double containerSize,
+  })  : _fontSize = fontSize,
+        _textOpacity = textOpacity,
+        _containerOpacity = containerOpacity,
+        _containerSize = containerSize;
+
+  final double height;
+  final double _fontSize;
+  final double _textOpacity;
+  final Animation<double>? animation1;
+  final double _containerOpacity;
+  final double width;
+  final double _containerSize;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Stack(
+        children: [
+          Image.asset(
+            'assets/images/Splash 1.png', // Replace with your image path
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+          ),
+          Column(
+            children: [
+              AnimatedContainer(
+                  duration: const Duration(milliseconds: 2000),
+                  curve: Curves.fastLinearToSlowEaseIn,
+                  height: height / _fontSize),
+              AnimatedOpacity(
+                duration: const Duration(milliseconds: 3000),
+                opacity: _textOpacity,
+                child: Text(
+                  'Health Care',
+                  style: TextStyle(
+                    fontFamily: 'monoton',
+                    color: const Color(0xff0165FC),
+                    fontWeight: FontWeight.bold,
+                    fontSize: animation1!.value,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Center(
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 3000),
+              curve: Curves.fastLinearToSlowEaseIn,
+              opacity: _containerOpacity,
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 3000),
+                curve: Curves.fastLinearToSlowEaseIn,
+                height: width / _containerSize,
+                width: width / _containerSize,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                // child: Image.asset('assets/images/file_name.png')
+                child: Image.asset('assets/images/LOGO 1.png'),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
