@@ -13,7 +13,7 @@ final String title;
       title,
       style: TextStyle(
           fontWeight: FontWeight.w500,
-          fontSize: 42.sp,
+          fontSize: 40.1.sp,
           color: Colors.white),
     );
   }

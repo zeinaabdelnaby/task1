@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomDropDownButton extends StatefulWidget {
    const CustomDropDownButton({super.key});
@@ -13,6 +14,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 60.sp,
   decoration: BoxDecoration(
     borderRadius: BorderRadius.circular(16),
     color: Colors.transparent,
