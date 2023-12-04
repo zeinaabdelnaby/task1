@@ -39,14 +39,9 @@ class CustomLoginInput extends StatelessWidget {
         SizedBox(
           height: 8.h,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            CustomTextButton(
-              onTap: () {},
-              text: 'Forgot your password ?',
-            ),
-          ],
+        CustomTextButton(
+          onTap: () {print('object');},
+          text: 'Forgot your password ?',
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,

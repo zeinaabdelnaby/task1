@@ -11,9 +11,14 @@ class CustomTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap:onTap ,
-      child: Text( text,style:  TextStyle(
-        color: const Color(0xffFFFFFF),fontSize: 15.sp
-      )),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Text( text,style:  TextStyle(
+            color: const Color(0xffFFFFFF),fontSize: 15.sp
+          )),
+        ],
+      ),
     );
   }
 }
