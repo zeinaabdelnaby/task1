@@ -12,17 +12,19 @@ class HealthCareConnectionApp extends StatelessWidget {
   // This widget is the root of our application.
   @override
   Widget build(BuildContext context) {
-    return  ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (_ , child) {
-        return MaterialApp.router(
-          theme: ThemeData.light().copyWith(scaffoldBackgroundColor: const Color(0xffE9E9E9)),
-      debugShowCheckedModeBanner: false,
-      routerConfig: AppRouters.router,
-      
-
-    );
-  });}
+    return ScreenUtilInit(
+        designSize: const Size(375, 812),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (_, child) {
+          return MaterialApp.router(
+            theme: ThemeData.light().copyWith(
+                scaffoldBackgroundColor: const Color(0xffE9E9E9),
+                textTheme: const TextTheme(
+                    bodyMedium: TextStyle(fontFamily: ''))),
+            debugShowCheckedModeBanner: false,
+            routerConfig: AppRouters.router,
+          );
+        });
+  }
 }

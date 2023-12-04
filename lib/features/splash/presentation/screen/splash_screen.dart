@@ -52,7 +52,7 @@ class _SplashScreenState extends State<SplashScreen>
     });
 
     Timer(const Duration(seconds: 6), () {
-      GoRouter.of(context).pushReplacement(AppRouters.khometest);
+      GoRouter.of(context).pushReplacement(AppRouters.kLoginScreen);
     });
   }
 
@@ -109,7 +109,7 @@ class AnimatedLogoAndName extends StatelessWidget {
       child: Stack(
         children: [
           Image.asset(
-            'assets/images/Splash 1.png', // Replace with your image path
+            'assets/images/Splash 1.png', 
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
