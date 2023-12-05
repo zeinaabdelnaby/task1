@@ -46,13 +46,12 @@ flutter:
     - family: monoton
       fonts:
         - asset: assets/fonts/Monoton-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-    # - family: josefinSans
-    #   fonts:
-    #     - asset: assetsfonts/static/JosefinSans-Bold.ttf
-        # - asset: assets/fonts/JosefinSans-Italic-VariableFont_wght.ttf
-        # - asset: assets/fonts/static/
+        
+    - family: josefinSans
+      fonts:
+        - asset: assets/fonts/JosefinSans/static/JosefinSans-Regular.ttf
+        - asset: assets/fonts/JosefinSans/static/JosefinSans-Bold.ttf
+
 
   #         weight: 700
   #

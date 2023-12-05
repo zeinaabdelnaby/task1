@@ -23,7 +23,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               const AuthScreensTitle(
                 title: 'Forgot Password',
               ),
-               Text('Enter your email account to reset your password',style: TextStyle(fontSize: 10.sp,fontWeight: FontWeight.w500),),
+               Text('Enter your email account to reset your password',style: TextStyle(fontSize: 13.sp,fontWeight: FontWeight.w500),),
               SizedBox(
                 height: 30.h,
               ),

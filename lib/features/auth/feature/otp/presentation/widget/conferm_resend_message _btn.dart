@@ -16,14 +16,14 @@ final void Function()? onTap;
           children: [
             Text(
               'Didn’t receive code? Request',
-              style: TextStyle(fontSize: 13.sp),
+              style: TextStyle(fontSize: 16.sp),
               textAlign: TextAlign.center,
             ),
             Row(
               children: [
                 Text(
                   'another one .',
-                  style: TextStyle(fontSize: 13.sp),
+                  style: TextStyle(fontSize: 16.sp),
                   textAlign: TextAlign.center,
                 ),
                 GestureDetector(
@@ -31,7 +31,7 @@ final void Function()? onTap;
                   child: Text(
                     'here',
                     style: TextStyle(
-                      fontSize: 13.sp,
+                      fontSize: 17.sp,
                       fontWeight: FontWeight.w700,
                       color: Colors.white, // Set the color you want
                       decoration: TextDecoration.underline,

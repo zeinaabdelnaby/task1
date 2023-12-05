@@ -21,7 +21,7 @@ class HealthCareConnectionApp extends StatelessWidget {
             theme: ThemeData.light().copyWith(
                 scaffoldBackgroundColor: const Color(0xffE9E9E9),
                 textTheme: const TextTheme(
-                    bodyMedium: TextStyle(fontFamily: ''))),
+                    bodyMedium: TextStyle(fontFamily: 'josefinSans'))),
             debugShowCheckedModeBanner: false,
             routerConfig: AppRouters.router,
           );

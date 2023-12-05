@@ -25,9 +25,10 @@ class CustomTextField extends StatelessWidget {
         Text(
           title,
           style: TextStyle(
-            fontSize: 15.sp,
+            fontSize: 16.sp,
             color: const Color.fromARGB(255, 35, 35, 35),
             fontWeight: FontWeight.w400,
+            
           ),
         ),
         SizedBox(

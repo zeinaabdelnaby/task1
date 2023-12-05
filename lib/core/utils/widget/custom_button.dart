@@ -24,7 +24,7 @@ class CustomButton extends StatelessWidget {
         height: 49.h,
         child: Text(labele,
             style: const TextStyle(
-              fontSize: 18,
+              fontSize: 22,
               fontWeight: FontWeight.w500,
             )),
       ),

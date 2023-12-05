@@ -12,9 +12,11 @@ final String title;
     return Text(
       title,
       style: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 40.1.sp,
-          color: Colors.white),
+          fontWeight: FontWeight.w800,
+          fontSize: 38.1.sp,
+          color: Colors.white,
+          
+           ),
     );
   }
 }
