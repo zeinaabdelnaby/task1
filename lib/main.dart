@@ -21,7 +21,6 @@ class HealthCareConnectionApp extends StatelessWidget {
           theme: ThemeData.light().copyWith(scaffoldBackgroundColor: const Color(0xffE9E9E9)),
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouters.router,
-      
 
     );
   });}
