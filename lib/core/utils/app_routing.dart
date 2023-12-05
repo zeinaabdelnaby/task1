@@ -2,6 +2,7 @@ import 'package:flutter_grad_project/features/auth/feature/forget_password/prese
 import 'package:flutter_grad_project/features/auth/feature/login/presentation/screen/login_screen.dart';
 import 'package:flutter_grad_project/features/auth/feature/otp/presentation/screen/otp.dart';
 import 'package:flutter_grad_project/features/auth/feature/sign_up/presintation/screen/sign_up.dart';
+import 'package:flutter_grad_project/features/auth/feature/user_required_data/presentation/screen/user_data_form.dart';
 import 'package:flutter_grad_project/features/splash/presentation/screen/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,6 +14,7 @@ static const kLoginScreen = '/LoginScreen';
 static const kSigninScreen = '/SigninScreen';
 static const kForgetPasswordScreen = '/forgetPasswordScreen';
 static const kOTPScreen = '/OtpScreen';
+static const kUserDataFormScreen = '/UserDataFormScreen';
 
 
  static final GoRouter router = GoRouter(
@@ -36,6 +38,10 @@ static const kOTPScreen = '/OtpScreen';
       GoRoute(
         path: kOTPScreen,
         builder: (context, state) => const OTPScreen(),
+      ),
+      GoRoute(
+        path: kUserDataFormScreen,
+        builder: (context, state) => const UserDataForm(),
       ),
     ],
   );

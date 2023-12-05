@@ -8,7 +8,8 @@ class CustomTextField extends StatelessWidget {
     required this.title,
     this.icon,
     required this.isPassword,
-    required this.hintText,
+    required this.hintText, required this.fillColor,
+    required this.borderColor,
   }) : super(key: key);
 
   final Function(String)? onChanged;
@@ -16,6 +17,8 @@ class CustomTextField extends StatelessWidget {
    Widget? icon;
   final bool isPassword;
   final String hintText;
+  final Color? fillColor;
+  final Color borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -43,25 +46,28 @@ class CustomTextField extends StatelessWidget {
               hintStyle:
                   const TextStyle(color: Color.fromARGB(255, 125, 122, 122)),
               filled: true,
-              fillColor: Colors.transparent,
+              fillColor: fillColor,
               suffixIcon: icon,
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: BorderSide(
                   width: 2.sp,
-                  color: const Color(0xff0165FC),
+                  color: borderColor,
                 ),
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: BorderSide(
                   width: 2.sp,
-                  color: const Color(0xff0165FC),
+                  color:borderColor,
                 ),
               ),
             ),
           ),
         ),
+        SizedBox(
+          height: 15.h,
+        )
       ],
     );
   }

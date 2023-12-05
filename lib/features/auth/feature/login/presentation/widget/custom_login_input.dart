@@ -28,19 +28,17 @@ class CustomLoginInput extends StatelessWidget {
           title: 'national id',
           isPassword: false,
           hintText: '1235897561235789',
+          fillColor: Colors.transparent, borderColor: const Color(0xFF0165FC)
         ),
-        SizedBox(
-          height: 8.h,
-        ),
+       
         CustomTextField(
+
             onChanged: (value) {},
             title: 'password',
             isPassword: true,
             hintText: '.................',
-            icon: const Icon(Icons.visibility)),
-        SizedBox(
-          height: 8.h,
-        ),
+            icon: const Icon(Icons.visibility), fillColor: Colors.transparent, borderColor: const Color(0xFF0165FC),),
+       
         CustomTextButton(
           onTap: () {GoRouter.of(context).push(AppRouters.kForgetPasswordScreen);},
           text: 'Forgot your password ?',

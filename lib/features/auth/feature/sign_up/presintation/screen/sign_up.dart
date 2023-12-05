@@ -32,20 +32,18 @@ class SignInScreen extends StatelessWidget {
                 title: 'national id',
                 isPassword: false,
                 hintText: '1235897561235789',
+                fillColor: Colors.transparent, borderColor: const Color(0xFF0165FC)
               ),
-              SizedBox(
-                height: 5.h,
-              ),
+            
               CustomTextField(
                 onChanged: (value) {},
                 title: 'password',
                 isPassword: true,
                 hintText: '.................',
                 icon: const Icon(Icons.visibility),
+                fillColor: Colors.transparent, borderColor: const Color(0xFF0165FC)
               ),
-              SizedBox(
-                height: 8.h,
-              ),
+             
               CustomTextButton(
                   text: 'alredy have account?',
                   onTap: () {
@@ -54,7 +52,7 @@ class SignInScreen extends StatelessWidget {
               SizedBox(
                 height: 8.h,
               ),
-              CustomButton(labele: 'Continue', onTap: () {})
+              CustomButton(labele: 'Continue', onTap: () {GoRouter.of(context).push(AppRouters.kUserDataFormScreen);})
             ]),
           ),
         )

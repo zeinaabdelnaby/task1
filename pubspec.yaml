@@ -9,6 +9,7 @@ environment:
   sdk: '>=3.2.2 <4.0.0'
 
 dependencies:
+  autocomplete_textfield: ^2.0.1
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
   dio: ^5.4.0
@@ -46,13 +47,11 @@ flutter:
     - family: monoton
       fonts:
         - asset: assets/fonts/Monoton-Regular.ttf
-        
+
     - family: josefinSans
       fonts:
         - asset: assets/fonts/JosefinSans/static/JosefinSans-Regular.ttf
         - asset: assets/fonts/JosefinSans/static/JosefinSans-Bold.ttf
-
-
   #         weight: 700
   #
   # For details regarding fonts from package dependencies,

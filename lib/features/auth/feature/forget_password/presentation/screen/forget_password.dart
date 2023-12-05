@@ -32,9 +32,10 @@ class ForgetPasswordScreen extends StatelessWidget {
                 title: 'Email',
                 isPassword: false,
                 hintText: 'example@email.com',
+                fillColor: Colors.transparent, borderColor: const Color(0xFF0165FC)
               ),
               SizedBox(
-                height: 30.h,
+                height: 15.h,
               ),
               CustomButton(labele: 'Send Code', onTap: (){GoRouter.of(context).push(AppRouters.kOTPScreen);})
       ])))
