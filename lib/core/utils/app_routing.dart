@@ -1,5 +1,6 @@
 import 'package:flutter_grad_project/features/auth/feature/forget_password/presentation/screen/forget_password.dart';
 import 'package:flutter_grad_project/features/auth/feature/login/presentation/screen/login_screen.dart';
+import 'package:flutter_grad_project/features/auth/feature/otp/presentation/screen/otp.dart';
 import 'package:flutter_grad_project/features/auth/feature/sign_up/presintation/screen/sign_up.dart';
 import 'package:flutter_grad_project/features/splash/presentation/screen/splash_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -11,6 +12,7 @@ static const kdefultRoute = '/';
 static const kLoginScreen = '/LoginScreen';
 static const kSigninScreen = '/SigninScreen';
 static const kForgetPasswordScreen = '/forgetPasswordScreen';
+static const kOTPScreen = '/OtpScreen';
 
 
  static final GoRouter router = GoRouter(
@@ -30,6 +32,10 @@ static const kForgetPasswordScreen = '/forgetPasswordScreen';
       GoRoute(
         path: kForgetPasswordScreen,
         builder: (context, state) => const ForgetPasswordScreen(),
+      ),
+      GoRoute(
+        path: kOTPScreen,
+        builder: (context, state) => const OTPScreen(),
       ),
     ],
   );
