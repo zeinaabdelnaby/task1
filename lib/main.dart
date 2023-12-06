@@ -11,11 +11,10 @@ class HealthCareConnectionApp extends StatelessWidget {
   // This widget is the root of our application.
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp.router(
+    return MaterialApp.router(
+      // theme: ThemeData(useMaterial3: false),
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouters.router,
-      
-
     );
   }
 }
