@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_grad_project/core/utils/widget/custom_button.dart';
 import 'package:flutter_grad_project/features/auth/core/widgets/custom_labeld_textfeild.dart';
 import 'package:flutter_grad_project/features/auth/feature/user_required_data/presentation/widget/custom_drop_down_search.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class UserDataForm extends StatelessWidget {
   const UserDataForm({super.key});
@@ -72,9 +74,10 @@ class UserDataForm extends StatelessWidget {
 
                   
                 ),
-                TextButton(onPressed: (){print('object');}, child: const Text('Go to add your history health informarion',style: TextStyle(fontSize:15,fontFamily: 'josefinSans',fontWeight: FontWeight.bold,color: Colors.black, decoration: TextDecoration.underline,),)),
+                TextButton(onPressed: (){GoRouter.of(context).push(AppRouters.kMedicalRecordScreen);}, child: const Text('Go to add your history health informarion',style: TextStyle(fontSize:15,fontFamily: 'josefinSans',fontWeight: FontWeight.bold,color: Colors.black, decoration: TextDecoration.underline,),)),
 
                         CustomButton(labele: 'Create Account', onTap: (){print('account created');})
+                          
                     ],
           ),
         )

@@ -5,7 +5,7 @@ import 'package:flutter_grad_project/core/utils/widget/custom_button.dart';
 import 'package:flutter_grad_project/features/auth/core/widgets/auth_screens_title.dart';
 import 'package:flutter_grad_project/features/auth/core/widgets/custom_labeld_textfeild.dart';
 import 'package:flutter_grad_project/features/auth/core/widgets/custom_text_button.dart';
-import 'package:flutter_grad_project/features/auth/feature/login/presentation/widget/dropdown_button.dart';
+import 'package:flutter_grad_project/features/auth/core/widgets/true_or_false_radioButton.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
@@ -55,7 +55,7 @@ class CustomLoginInput extends StatelessWidget {
                 
               ),
             ),
-            const CustomDropDownButton(),
+            const CustomRadioButton(value1: 'doctot',value2: 'patient'),
           ],
         ),
         SizedBox(
