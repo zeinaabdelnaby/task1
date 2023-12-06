@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_grad_project/core/utils/widget/custom_button.dart';
@@ -24,23 +23,25 @@ class CustomLoginInput extends StatelessWidget {
           height: 5.h,
         ),
         CustomTextField(
-          onChanged: (value) {},
-          title: 'national id',
-          isPassword: false,
-          hintText: '1235897561235789',
-          fillColor: Colors.transparent, borderColor: const Color(0xFF0165FC)
-        ),
-       
-        CustomTextField(
-
             onChanged: (value) {},
-            title: 'password',
-            isPassword: true,
-            hintText: '.................',
-            icon: const Icon(Icons.visibility), fillColor: Colors.transparent, borderColor: const Color(0xFF0165FC),),
-       
+            title: 'national id',
+            isPassword: false,
+            hintText: '1235897561235789',
+            fillColor: Colors.transparent,
+            borderColor: const Color(0xFF0165FC)),
+        CustomTextField(
+          onChanged: (value) {},
+          title: 'password',
+          isPassword: true,
+          hintText: '.................',
+          icon: const Icon(Icons.visibility),
+          fillColor: Colors.transparent,
+          borderColor: const Color(0xFF0165FC),
+        ),
         CustomTextButton(
-          onTap: () {GoRouter.of(context).push(AppRouters.kForgetPasswordScreen);},
+          onTap: () {
+            GoRouter.of(context).push(AppRouters.kForgetPasswordScreen);
+          },
           text: 'Forgot your password ?',
         ),
         Column(
@@ -52,10 +53,20 @@ class CustomLoginInput extends StatelessWidget {
                 fontSize: 16.sp,
                 color: const Color.fromARGB(255, 35, 35, 35),
                 fontWeight: FontWeight.w400,
-                
               ),
             ),
-            const CustomRadioButton(value1: 'doctot',value2: 'patient'),
+            Container(
+                height: 60.h,
+                width: 332.w,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(12)),
+                  border: Border.all(
+                    color: const Color(0xFF0165FC),
+                    width: 2.0,
+                  ),
+                ),
+                child: const CustomRadioButton(
+                    value1: 'doctot', value2: 'patient')),
           ],
         ),
         SizedBox(
