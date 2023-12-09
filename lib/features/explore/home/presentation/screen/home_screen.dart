@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/widgets/custom_navbar.dart';
 import 'package:flutter_grad_project/core/widgets/custom_rawMaterialButton.dart';
-import 'package:flutter_grad_project/features/home/presentation/widgets/custom_stack.dart';
+import 'package:flutter_grad_project/features/explore/home/presentation/widgets/custom_stack.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

@@ -59,7 +59,7 @@ class CustomStack2 extends StatelessWidget {
                         child: CurtomReadMoreButton(
                           width: 30,
                           height: 30,
-                          size: 17.24,
+                          size: 17.24, color: Color(0xFF0165FC),
                         ),
                       )
                     ],

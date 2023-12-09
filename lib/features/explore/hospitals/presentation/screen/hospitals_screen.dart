@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/widgets/custom_navbar.dart';
 import 'package:flutter_grad_project/core/widgets/custom_page_address.dart';
-import 'package:flutter_grad_project/features/hospitals/presentation/widgets/custom_stack2.dart';
+import 'package:flutter_grad_project/features/explore/hospitals/presentation/widgets/custom_stack2.dart';
 
 class HospitalsScreen extends StatefulWidget {
   const HospitalsScreen({super.key});
