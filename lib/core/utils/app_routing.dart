@@ -1,3 +1,4 @@
+import 'package:flutter_grad_project/features/booking_done/presentation/screen/booking_done_screen.dart';
 import 'package:flutter_grad_project/features/home_test/home_screen.dart';
 import 'package:flutter_grad_project/features/reception/reservation/presentation/screen/reservation.dart';
 import 'package:flutter_grad_project/features/splash/presentation/screen/splash_screen.dart';
@@ -9,6 +10,8 @@ abstract class AppRouters {
 static const kdefultRoute = '/';
 static const khometest = '/home';
 static const kreservationScreen = '/reservationScreen';
+static const kbookingDoneScreen = '/bookingDoneScreen';
+
 
 
  static final GoRouter router = GoRouter(
@@ -24,6 +27,10 @@ static const kreservationScreen = '/reservationScreen';
       GoRoute(
         path: khometest,
         builder: (context, state) => const ReservationScreen(),
+      ),
+      GoRoute(
+        path: kbookingDoneScreen,
+        builder: (context, state) => const BookingDoneScreen(),
       ),
     ],
   );
