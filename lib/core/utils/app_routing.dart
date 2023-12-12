@@ -25,7 +25,7 @@ static const kbookingDoneScreen = '/bookingDoneScreen';
         builder: (context, state) => const HomeTestScreen(),
       ),
       GoRoute(
-        path: khometest,
+        path: kreservationScreen,
         builder: (context, state) => const ReservationScreen(),
       ),
       GoRoute(
