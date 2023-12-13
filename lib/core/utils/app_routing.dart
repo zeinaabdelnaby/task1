@@ -1,3 +1,8 @@
+//import 'package:flutter_grad_project/features/Blood_Bank/BloodBank/presentation/Screens/presentation/screen/blood_bank.dart';
+// import 'package:flutter_grad_project/features/profilee/presentation/screen/presentation/screen/profile_screen.dart';
+import 'package:flutter_grad_project/features/Blood_Bank/BloodBank/screens/Bloodd_bank/presentation/screen/blood_bank.dart';
+import 'package:flutter_grad_project/features/Blood_Bank/inquiry/presentation/screen/inquiry.dart';
+import 'package:flutter_grad_project/features/Blood_Bank/otp/presentation/screen/otp.dart';
 import 'package:flutter_grad_project/features/auth/feature/forget_password/presentation/screen/forget_password.dart';
 import 'package:flutter_grad_project/features/auth/feature/login/presentation/screen/login_screen.dart';
 import 'package:flutter_grad_project/features/auth/feature/otp/presentation/screen/otp.dart';
@@ -9,7 +14,6 @@ import 'package:flutter_grad_project/features/explore/home/presentation/screen/h
 import 'package:flutter_grad_project/features/explore/hospitals/presentation/screen/hospitals_screen.dart';
 import 'package:flutter_grad_project/features/explore/info_hospital/presentation/screen/info_hospital_screen.dart';
 import 'package:flutter_grad_project/features/reception/reservation/presentation/screen/reservation.dart';
-import 'package:flutter_grad_project/features/splash/presentation/screen/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouters {
@@ -27,12 +31,24 @@ abstract class AppRouters {
   static const khomeScreen = '/homeScreen';
   static const khospitalsScreen = '/hospitalsScreen';
   static const kinfoHospitalScreen = '/InfoHospitalScreen';
+  static const kBloodBankRoute = '/BloodBank';
+  static const kinquiryRoute = '/quiry';
+  static const kOtpRoute = '/Otp';
+  static const kProfileScreenRoute = '/ProfileScreen';
 
   static final GoRouter router = GoRouter(
     routes: [
       GoRoute(
-        path: kdefultRoute,
-        builder: (context, state) => const SplashScreen(),
+        path: kBloodBankRoute,
+        builder: (context, state) => const Blood_Bank(),
+      ),
+      GoRoute(
+        path: kOtpRoute,
+        builder: (context, state) => const Otp(),
+      ),
+      GoRoute(
+        path: kinquiryRoute,
+        builder: (context, state) => const Inguiry_Screen(),
       ),
       GoRoute(
         path: kLoginScreen,
