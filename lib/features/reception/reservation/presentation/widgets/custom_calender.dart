@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 /// My app class to display the date range picker
@@ -13,7 +12,7 @@ class CustomCalender extends StatefulWidget {
 /// State for MyApp
 class MyAppState extends State<CustomCalender> {
   String _selectedDate = '';
-  String _dateCount = '';
+  final String _dateCount = '';
   // String _range = '';
   // String _rangeCount = '';
 
