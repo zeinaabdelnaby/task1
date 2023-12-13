@@ -40,7 +40,6 @@ abstract class AppRouters {
   static const kProfileScreenRoute = '/ProfileScreen';
 
   static final GoRouter router = GoRouter(
-    initialLocation: kProfileScreenRoute,
     routes: [
       GoRoute(
         path: kdefultRoute,
