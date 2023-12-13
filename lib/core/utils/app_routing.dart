@@ -7,7 +7,6 @@ import 'package:flutter_grad_project/features/auth/feature/user_required_data/pr
 import 'package:flutter_grad_project/features/explore/home/presentation/screen/home_screen.dart';
 import 'package:flutter_grad_project/features/explore/hospitals/presentation/screen/hospitals_screen.dart';
 import 'package:flutter_grad_project/features/explore/info_hospital/presentation/screen/info_hospital_screen.dart';
-import 'package:flutter_grad_project/features/home_test/home_screen.dart';
 import 'package:flutter_grad_project/features/splash/presentation/screen/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -21,7 +20,6 @@ abstract class AppRouters {
   static const kOTPScreen = '/OtpScreen';
   static const kUserDataFormScreen = '/UserDataFormScreen';
   static const kMedicalRecordScreen = '/MedicalRecordScreen';
-  static const khometest = '/home';
   static const khomeScreen = '/homeScreen';
   static const khospitalsScreen = '/hospitalsScreen';
   static const kinfoHospitalScreen = '/InfoHospitalScreen';
@@ -55,10 +53,6 @@ abstract class AppRouters {
       GoRoute(
         path: kMedicalRecordScreen,
         builder: (context, state) => const MedicalRecord(),
-      ),
-      GoRoute(
-        path: khometest,
-        builder: (context, state) => const HomeTestScreen(),
       ),
       GoRoute(
         path: khomeScreen,
