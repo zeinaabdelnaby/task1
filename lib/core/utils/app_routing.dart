@@ -14,6 +14,7 @@ import 'package:flutter_grad_project/features/explore/home/presentation/screen/h
 import 'package:flutter_grad_project/features/explore/hospitals/presentation/screen/hospitals_screen.dart';
 import 'package:flutter_grad_project/features/explore/info_hospital/presentation/screen/info_hospital_screen.dart';
 import 'package:flutter_grad_project/features/reception/reservation/presentation/screen/reservation.dart';
+import 'package:flutter_grad_project/features/splash/presentation/screen/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouters {
@@ -38,6 +39,10 @@ abstract class AppRouters {
 
   static final GoRouter router = GoRouter(
     routes: [
+      GoRoute(
+        path: kdefultRoute,
+        builder: (context, state) => const SplashScreen(),
+      ),
       GoRoute(
         path: kBloodBankRoute,
         builder: (context, state) => const Blood_Bank(),
