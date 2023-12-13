@@ -11,6 +11,7 @@ import 'package:flutter_grad_project/features/booking_done/presentation/screen/b
 import 'package:flutter_grad_project/features/explore/home/presentation/screen/home_screen.dart';
 import 'package:flutter_grad_project/features/explore/hospitals/presentation/screen/hospitals_screen.dart';
 import 'package:flutter_grad_project/features/explore/info_hospital/presentation/screen/info_hospital_screen.dart';
+import 'package:flutter_grad_project/features/onboarding/presentation/screen/onboarding_screen.dart';
 import 'package:flutter_grad_project/features/reception/reservation/presentation/screen/reservation.dart';
 import 'package:flutter_grad_project/features/splash/presentation/screen/splash_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -19,6 +20,9 @@ abstract class AppRouters {
 // create  route path variables must start with '/......'
 
   static const kdefultRoute = '/';
+  static const khometest = '/home';
+  static const konboarding = '/onboarding';
+
   static const kreservationScreen = '/reservationScreen';
   static const kbookingDoneScreen = '/bookingDoneScreen';
   static const kLoginScreen = '/LoginScreen';
@@ -97,6 +101,10 @@ abstract class AppRouters {
       GoRoute(
         path: kbookingDoneScreen,
         builder: (context, state) => const BookingDoneScreen(),
+      ),
+      GoRoute(
+        path: konboarding,
+        builder: (context, state) => const Onboarding(),
       ),
     ],
   );
