@@ -1,10 +1,8 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_grad_project/core/utils/app_colors.dart';
 
-class Inguiry_Screen extends StatelessWidget {
-  const Inguiry_Screen({super.key});
+class InguiryScreen extends StatelessWidget {
+  const InguiryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +22,11 @@ class Inguiry_Screen extends StatelessWidget {
                 color: Colors.black.withOpacity(0.2),
                 spreadRadius: 1,
                 blurRadius: 7,
-                offset: Offset(0, 3),
+                offset: const Offset(0, 3),
               )
             ], color: AppColors.app, borderRadius: BorderRadius.circular(4)),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 8),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 8),
               child: Icon(
                 Icons.arrow_back_ios,
                 color: AppColors.capital_text,
@@ -37,11 +35,11 @@ class Inguiry_Screen extends StatelessWidget {
           ),
         ),
         body: Column(children: [
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 3, left: 15),
+          const Padding(
+            padding: EdgeInsets.only(top: 3, left: 15),
             child: Text(
               "Blood Bank",
               style: TextStyle(
@@ -52,14 +50,14 @@ class Inguiry_Screen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           Container(
             height: 45,
             width: w,
             color: AppColors.blue,
-            child: Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
@@ -72,7 +70,7 @@ class Inguiry_Screen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(),
+                  padding: EdgeInsets.only(),
                   child: Text(
                     "Name",
                     style: TextStyle(
@@ -107,7 +105,7 @@ class Inguiry_Screen extends StatelessWidget {
           Container(
               height: 650,
               width: w,
-              decoration: BoxDecoration(color: AppColors.bgscaffold),
+              decoration: const BoxDecoration(color: AppColors.bgscaffold),
               child: ListView.builder(
                   itemCount: item.length,
                   itemBuilder: (context, index) {

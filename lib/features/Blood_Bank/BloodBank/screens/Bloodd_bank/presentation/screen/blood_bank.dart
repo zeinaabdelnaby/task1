@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_colors.dart';
 
-class Blood_Bank extends StatelessWidget {
-  const Blood_Bank({super.key});
+class BloodBank extends StatelessWidget {
+  const BloodBank({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +22,11 @@ class Blood_Bank extends StatelessWidget {
                 color: Colors.black.withOpacity(0.2),
                 spreadRadius: 1,
                 blurRadius: 7,
-                offset: Offset(2, 3),
+                offset: const Offset(2, 3),
               )
             ], color: AppColors.white, borderRadius: BorderRadius.circular(4)),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 8),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 8),
               child: Icon(
                 Icons.arrow_back_ios,
                 color: AppColors.capital_text,
@@ -47,10 +46,10 @@ class Blood_Bank extends StatelessWidget {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
-                      Text(
+                      const Text(
                         "Blood Donation",
                         style: TextStyle(
                           color: AppColors.white,
@@ -74,10 +73,10 @@ class Blood_Bank extends StatelessWidget {
                         color: Colors.grey.withOpacity(0.5),
                         spreadRadius: 5,
                         blurRadius: 7,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       )
                     ],
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                    borderRadius: const BorderRadius.all(Radius.circular(20))),
                 height: h / 10,
                 width: w / 1.2,
                 child: Row(
@@ -85,7 +84,7 @@ class Blood_Bank extends StatelessWidget {
                   children: [
                     TextButton(
                         onPressed: () {},
-                        child: Text("Donation",
+                        child: const Text("Donation",
                             style: TextStyle(
                               color: AppColors.blue,
                               fontFamily: "JosefinSans_Bold",
@@ -95,7 +94,7 @@ class Blood_Bank extends StatelessWidget {
                     Container(
                       height: 100,
                       width: 2,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: AppColors.blue,
                         // BoxShadow(
                         //   color: Colors.black, //New
@@ -105,7 +104,7 @@ class Blood_Bank extends StatelessWidget {
                     ),
                     TextButton(
                         onPressed: () {},
-                        child: Text("Enquiry",
+                        child: const Text("Enquiry",
                             style: TextStyle(
                               color: AppColors.blue,
                               fontFamily: "JosefinSans_Bold",
@@ -118,8 +117,8 @@ class Blood_Bank extends StatelessWidget {
               // SizedBox(
               //   height: h / 5,
               // ),
-              Padding(
-                padding: const EdgeInsets.only(right: 260, top: 50),
+              const Padding(
+                padding: EdgeInsets.only(right: 260, top: 50),
                 child: Text(
                   "national id",
                   style: TextStyle(
@@ -132,19 +131,19 @@ class Blood_Bank extends StatelessWidget {
                     decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.0),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: AppColors.black,
                       width: 2.0,
                     ),
                   ),
                   hintText: '0987657643233212',
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                       fontSize: 14, fontFamily: "JosefinSans_Regular"),
                   contentPadding:
-                      EdgeInsets.all(10.0), // Adjust padding as needed
+                      const EdgeInsets.all(10.0), // Adjust padding as needed
                 )),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Padding(
@@ -154,14 +153,14 @@ class Blood_Bank extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    primary: Color(0xff1f78ff),
+                    backgroundColor: const Color(0xff1f78ff),
                   ),
                   onPressed: () {},
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(10.0),
+                        padding: EdgeInsets.all(10.0),
                         child: Text(
                           'Apply Request',
                           style: TextStyle(
@@ -174,7 +173,7 @@ class Blood_Bank extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               )
             ]),

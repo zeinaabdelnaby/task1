@@ -44,7 +44,7 @@ abstract class AppRouters {
       ),
       GoRoute(
         path: kBloodBankRoute,
-        builder: (context, state) => const Blood_Bank(),
+        builder: (context, state) => const BloodBank(),
       ),
       GoRoute(
         path: kOtpRoute,
@@ -52,7 +52,7 @@ abstract class AppRouters {
       ),
       GoRoute(
         path: kinquiryRoute,
-        builder: (context, state) => const Inguiry_Screen(),
+        builder: (context, state) => const InguiryScreen(),
       ),
       GoRoute(
         path: kLoginScreen,
