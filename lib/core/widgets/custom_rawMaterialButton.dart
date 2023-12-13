@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:flutter/material.dart';
 
 class CustomRawMaterialButton extends StatelessWidget {
@@ -9,6 +11,11 @@ class CustomRawMaterialButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RawMaterialButton(
       elevation: 0.0,
+      child: Icon(
+        icon,
+        size: 25,
+        color: const Color(0xFF0165FC),
+      ),
       onPressed: () {},
       constraints: const BoxConstraints.tightFor(
         width: 32,
@@ -16,11 +23,6 @@ class CustomRawMaterialButton extends StatelessWidget {
       ),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       fillColor: const Color(0xFF3A89FF).withOpacity(.4),
-      child: Icon(
-        icon,
-        size: 25,
-        color: const Color(0xFF0165FC),
-      ),
     );
   }
 }

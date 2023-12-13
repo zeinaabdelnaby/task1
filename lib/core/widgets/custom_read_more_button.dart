@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:flutter/material.dart';
 
 class CurtomReadMoreButton extends StatelessWidget {
@@ -20,14 +22,14 @@ class CurtomReadMoreButton extends StatelessWidget {
       child: Icon(
         Icons.call_made,
         size: size,
-        color: Color(0xFFE9E9E9),
+        color: const Color(0xFFE9E9E9),
       ),
       onPressed: () {},
       constraints: BoxConstraints.tightFor(
         width: width,
         height: height,
       ),
-      shape: CircleBorder(),
+      shape: const CircleBorder(),
       fillColor: color,
     );
   }
