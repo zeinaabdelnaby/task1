@@ -1,12 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_colors.dart';
-import 'package:flutter_grad_project/core/utils/images_asset.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class ProfileScreen extends StatelessWidget {
-  ProfileScreen({super.key});
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +22,8 @@ class ProfileScreen extends StatelessWidget {
           decoration: BoxDecoration(
               color: AppColors.floating.withOpacity(.4),
               borderRadius: BorderRadius.circular(4)),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 8),
+          child: const Padding(
+            padding: EdgeInsets.only(left: 8),
             child: Icon(
               Icons.arrow_back_ios,
               color: AppColors.capital_text,
@@ -43,15 +41,15 @@ class ProfileScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20)),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 70,
                 ),
-                CircleAvatar(
+                const CircleAvatar(
                     radius: 40,
                     backgroundImage:
                         AssetImage("assets/images/Mask group.png")),
 
-                Text(
+                const Text(
                   "@cassiejo",
                   style: TextStyle(
                     color: AppColors.profile_name,
@@ -60,14 +58,14 @@ class ProfileScreen extends StatelessWidget {
                     fontSize: 13,
                   ),
                 ),
-                Text("Cassie Jones",
+                const Text("Cassie Jones",
                     style: TextStyle(
                       color: AppColors.black,
                       fontFamily: "JosefinSans_Bold",
                       fontWeight: FontWeight.w400,
                       fontSize: 18,
                     )),
-                Text(
+                const Text(
                   "patient | Joined Jan 2023",
                   style: TextStyle(
                     color: AppColors.capital_text,
@@ -86,7 +84,7 @@ class ProfileScreen extends StatelessWidget {
                           width: 103,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
-                              gradient: LinearGradient(colors: [
+                              gradient: const LinearGradient(colors: [
                                 Color(0xff4892FF),
                                 Color(0xff3A89FF)
                               ])),
@@ -99,8 +97,8 @@ class ProfileScreen extends StatelessWidget {
                                     height: 27,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(50),
-                                        color: Color(0xffEBDED1)),
-                                    child: Text("")),
+                                        color: const Color(0xffEBDED1)),
+                                    child: const Text("")),
                               ),
                             ],
                           )),
@@ -109,7 +107,7 @@ class ProfileScreen extends StatelessWidget {
                           width: 103,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
-                              gradient: LinearGradient(colors: [
+                              gradient: const LinearGradient(colors: [
                                 Color(0xff4892FF),
                                 Color(0xff3A89FF)
                               ])),
@@ -122,8 +120,8 @@ class ProfileScreen extends StatelessWidget {
                                     height: 27,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(50),
-                                        color: Color(0xffEBDED1)),
-                                    child: Text("")),
+                                        color: const Color(0xffEBDED1)),
+                                    child: const Text("")),
                               ),
                             ],
                           )),
@@ -132,7 +130,7 @@ class ProfileScreen extends StatelessWidget {
                           width: 103,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
-                              gradient: LinearGradient(colors: [
+                              gradient: const LinearGradient(colors: [
                                 Color(0xff4892FF),
                                 Color(0xff3A89FF)
                               ])),
@@ -145,8 +143,8 @@ class ProfileScreen extends StatelessWidget {
                                     height: 27,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(50),
-                                        color: Color(0xffEBDED1)),
-                                    child: Text("")),
+                                        color: const Color(0xffEBDED1)),
+                                    child: const Text("")),
                               ),
                             ],
                           )),
@@ -238,20 +236,20 @@ class ProfileScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 48,
           ),
           Container(
             height: h / 1.92,
             width: w,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: Color(0xffFFFFFF),
                 borderRadius: BorderRadius.all(Radius.circular(20))),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 15, top: 15),
+                const Padding(
+                  padding: EdgeInsets.only(left: 15, top: 15),
                   child: Text(
                     "Account Information",
                     style: TextStyle(
@@ -266,35 +264,35 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.email_outlined, color: Color(0xff0362F2),
                           // size: 17,
                         )),
-                    Text("Email",
+                    const Text("Email",
                         style: TextStyle(
                           color: AppColors.capital_text,
                           fontFamily: "JosefinSans_Bold",
                           fontWeight: FontWeight.w400,
                           fontSize: 20,
                         )),
-                    SizedBox(
+                    const SizedBox(
                       width: 80,
                     ),
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           FontAwesomeIcons.penToSquare,
                           color: Color(0xff0362F2),
                           size: 17,
                         )),
                     GradientText(
                       'cassie.jones@gmail.com',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: "JosefinSans_Bold",
                         fontWeight: FontWeight.w400,
                         fontSize: 13,
                       ),
-                      colors: const [Color(0xff0165FCE), Color(0xff2C80FE)],
+                      colors: const [Color(0xff0165fce), Color(0xff2C80FE)],
                     ),
                   ],
                 ),
@@ -302,36 +300,36 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.local_phone_outlined,
                           color: Color(0xff0362F2),
                           size: 20,
                         )),
-                    Text("Phone",
+                    const Text("Phone",
                         style: TextStyle(
                           color: AppColors.capital_text,
                           fontFamily: "JosefinSans_Bold",
                           fontWeight: FontWeight.w400,
                           fontSize: 18,
                         )),
-                    SizedBox(
+                    const SizedBox(
                       width: 100,
                     ),
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           FontAwesomeIcons.penToSquare,
                           color: Color(0xff0362F2),
                           size: 17,
                         )),
                     GradientText(
                       '+20 123 456 789',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: "JosefinSans_Bold",
                         fontWeight: FontWeight.w400,
                         fontSize: 13,
                       ),
-                      colors: const [Color(0xff0165FCE), Color(0xff2C80FE)],
+                      colors: const [Color(0xff0165fce), Color(0xff2C80FE)],
                     ),
                   ],
                 ),
@@ -339,19 +337,19 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           FontAwesomeIcons.creditCard,
                           color: Color(0xff0362F2),
                           size: 20,
                         )),
-                    Text("Payment",
+                    const Text("Payment",
                         style: TextStyle(
                           color: AppColors.capital_text,
                           fontFamily: "JosefinSans_Bold",
                           fontWeight: FontWeight.w400,
                           fontSize: 18,
                         )),
-                    SizedBox(
+                    const SizedBox(
                       width: 150,
                     ),
                     Padding(
@@ -373,12 +371,12 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           FontAwesomeIcons.listCheck,
                           color: Color(0xff0362F2),
                           size: 20,
                         )),
-                    Text(
+                    const Text(
                       "Wishlist",
                       style: TextStyle(
                         color: AppColors.capital_text,
@@ -387,24 +385,24 @@ class ProfileScreen extends StatelessWidget {
                         fontSize: 18,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 90,
                     ),
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           FontAwesomeIcons.penToSquare,
                           color: Color(0xff0362F2),
                           size: 17,
                         )),
                     GradientText(
                       'Go to your wishlist',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: "JosefinSans_Bold",
                         fontWeight: FontWeight.w400,
                         fontSize: 13,
                       ),
-                      colors: const [Color(0xff0165FCE), Color(0xff2C80FE)],
+                      colors: const [Color(0xff0165fce), Color(0xff2C80FE)],
                     ),
                   ],
                 ),
@@ -412,36 +410,36 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.location_on_outlined,
                           color: Color(0xff0362F2),
                           size: 20,
                         )),
-                    Text("Location",
+                    const Text("Location",
                         style: TextStyle(
                           color: AppColors.capital_text,
                           fontFamily: "JosefinSans_Bold",
                           fontWeight: FontWeight.w400,
                           fontSize: 18,
                         )),
-                    SizedBox(
+                    const SizedBox(
                       width: 60,
                     ),
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           FontAwesomeIcons.penToSquare,
                           color: Color(0xff0362F2),
                           size: 17,
                         )),
                     GradientText(
                       'Egypt, El Mahala Kubra.',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: "JosefinSans_Bold",
                         fontWeight: FontWeight.w400,
                         fontSize: 13,
                       ),
-                      colors: const [Color(0xff0165FCE), Color(0xff2C80FE)],
+                      colors: const [Color(0xff0165fce), Color(0xff2C80FE)],
                     ),
                   ],
                 ),
@@ -449,29 +447,29 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           FontAwesomeIcons.calendarDays,
                           color: Color(0xff0362F2),
                           size: 20,
                         )),
-                    Text("Joined",
+                    const Text("Joined",
                         style: TextStyle(
                           color: AppColors.capital_text,
                           fontFamily: "JosefinSans_Bold",
                           fontWeight: FontWeight.w400,
                           fontSize: 18,
                         )),
-                    SizedBox(
+                    const SizedBox(
                       width: 150,
                     ),
                     GradientText(
                       '26 jan 2023',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: "JosefinSans_Bold",
                         fontWeight: FontWeight.w400,
                         fontSize: 13,
                       ),
-                      colors: const [Color(0xff0165FCE), Color(0xff2C80FE)],
+                      colors: const [Color(0xff0165fce), Color(0xff2C80FE)],
                     ),
                   ],
                 ),
@@ -482,7 +480,7 @@ class ProfileScreen extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
-                      primary: Color(0xff1f78ff),
+                      backgroundColor: const Color(0xff1f78ff),
                     ),
                     onPressed: () {},
                     child: Row(
@@ -490,12 +488,12 @@ class ProfileScreen extends StatelessWidget {
                       children: [
                         IconButton(
                           onPressed: () {},
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.logout,
                             color: AppColors.white,
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Log out',
                           style: TextStyle(color: AppColors.white),
                         ),

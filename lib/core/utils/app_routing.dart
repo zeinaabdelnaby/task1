@@ -11,10 +11,8 @@ import 'package:flutter_grad_project/features/booking_done/presentation/screen/b
 import 'package:flutter_grad_project/features/explore/home/presentation/screen/home_screen.dart';
 import 'package:flutter_grad_project/features/explore/hospitals/presentation/screen/hospitals_screen.dart';
 import 'package:flutter_grad_project/features/explore/info_hospital/presentation/screen/info_hospital_screen.dart';
-import 'package:flutter_grad_project/features/profilee/presentation/screen/presentation/screen/profile_screen.dart';
 import 'package:flutter_grad_project/features/reception/reservation/presentation/screen/reservation.dart';
 import 'package:flutter_grad_project/features/splash/presentation/screen/splash_screen.dart';
-import 'package:go_router/go_router.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouters {
