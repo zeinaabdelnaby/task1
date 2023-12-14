@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_grad_project/features/reception/reservation/presentation/widgets/custom_calender.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_grad_project/core/widgets/custom_page_address.dart';
 import 'package:flutter_grad_project/core/widgets/custom_subtitle.dart';
+import 'package:flutter_grad_project/features/reception/reservation/presentation/widgets/custom_calender.dart';
+import 'package:go_router/go_router.dart';
 
 class ReservationScreen extends StatefulWidget {
   const ReservationScreen({super.key});
@@ -60,13 +62,13 @@ class _ReservationScreenState extends State<ReservationScreen> {
                 ],
               ),
               const SizedBox(height: 45),
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CustomSubTitle(
+                  CustomSubTitle(
                     text: 'Select day',
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 11,
                   ),
                   SizedBox(width: 300, height: 200, child: CustomCalender())
@@ -101,7 +103,9 @@ class _ReservationScreenState extends State<ReservationScreen> {
                     height: 20,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      GoRouter.of(context).push(AppRouters.kbookingDoneScreen);
+                    },
                     child: Container(
                       height: 50.0,
                       decoration: BoxDecoration(

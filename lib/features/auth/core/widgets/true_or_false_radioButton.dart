@@ -11,7 +11,7 @@ class CustomRadioButton extends StatefulWidget {
 }
 
 class _CustomRadioButtonState extends State<CustomRadioButton> {
-  String selectedValue ="true";
+  String selectedValue = "true";
 
   @override
   Widget build(BuildContext context) {

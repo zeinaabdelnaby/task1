@@ -53,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen>
     });
 
     Timer(const Duration(seconds: 6), () {
-      GoRouter.of(context).pushReplacement(AppRouters.kSigninScreen);
+      GoRouter.of(context).pushReplacement(AppRouters.konboarding);
     });
   }
 

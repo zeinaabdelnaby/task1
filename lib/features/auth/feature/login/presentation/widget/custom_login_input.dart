@@ -74,7 +74,9 @@ class CustomLoginInput extends StatelessWidget {
         ),
         CustomButton(
           labele: 'Log in',
-          onTap: () {},
+          onTap: () {
+            GoRouter.of(context).pushReplacement(AppRouters.khomeScreen);
+          },
         ),
       ],
     );

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_carousel_slider/flutter_custom_carousel_slider.dart';
+import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_grad_project/core/widgets/custom_page_address.dart';
 import 'package:flutter_grad_project/core/widgets/custom_read_more_button.dart';
 import 'package:flutter_grad_project/core/widgets/custom_starRow.dart';
 import 'package:flutter_grad_project/core/widgets/custom_subtitle.dart';
 import 'package:flutter_grad_project/features/explore/info_hospital/presentation/widgets/custom_check_row.dart';
+import 'package:go_router/go_router.dart';
 
 class InfoHospitalScreen extends StatefulWidget {
-  InfoHospitalScreen({super.key});
+  const InfoHospitalScreen({super.key});
 
   @override
   State<InfoHospitalScreen> createState() => _InfoHospitalScreenState();
@@ -163,7 +165,10 @@ class _InfoHospitalScreenState extends State<InfoHospitalScreen> {
                               fontSize: 15,
                               color: Color(0xFF000000)),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          GoRouter.of(context)
+                              .push(AppRouters.kreservationScreen);
+                        },
                         style: ElevatedButton.styleFrom(
                           side: BorderSide(
                               width: 1.0,

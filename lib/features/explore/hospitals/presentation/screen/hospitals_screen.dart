@@ -21,20 +21,25 @@ class _HospitalsScreenState extends State<HospitalsScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              CustomPageAddress(icon: Icons.arrow_back, add: "X-Rays Department"),
+              CustomPageAddress(
+                  icon: Icons.arrow_back, add: "X-Rays Department"),
               Padding(
-                padding: EdgeInsets.only(left: 200.0,top: 30),
-                child: Text("all hospitals",
-                style: TextStyle(
-                  color: Color(0xFF0165FC),
-                  fontSize: 20,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: "JosefinSans_Italic",
-                  decoration: TextDecoration.underline,
-                  decorationColor: Color(0xFF0165FC),
-                ),),
+                padding: EdgeInsets.only(left: 200.0, top: 30),
+                child: Text(
+                  "all hospitals",
+                  style: TextStyle(
+                    color: Color(0xFF0165FC),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: "JosefinSans_Italic",
+                    decoration: TextDecoration.underline,
+                    decorationColor: Color(0xFF0165FC),
+                  ),
+                ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Wrap(
                 spacing: 15,
                 runSpacing: 15,

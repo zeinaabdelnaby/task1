@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_grad_project/features/onboarding/presentation/screen/next_page.dart';
+import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_grad_project/features/onboarding/presentation/widgets/onboarding1.dart';
 import 'package:flutter_grad_project/features/onboarding/presentation/widgets/onboarding2.dart';
 import 'package:flutter_grad_project/features/onboarding/presentation/widgets/onboarding3.dart';
+import 'package:go_router/go_router.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -108,12 +109,13 @@ class _OnboardingState extends State<Onboarding> {
           duration: const Duration(milliseconds: 300),
           curve: Curves.decelerate);
     } else {
-      Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const NextPage(),
-          ),
-          (route) => false);
+      // Navigator.pushAndRemoveUntil(
+      //     context,
+      //     MaterialPageRoute(
+      //       builder: (context) => const NextPage(),
+      //     ),
+      //     (route) => false);
+      GoRouter.of(context).pushReplacement(AppRouters.kSigninScreen);
       setState(() {});
     }
   }

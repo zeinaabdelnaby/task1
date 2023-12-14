@@ -91,7 +91,7 @@ abstract class AppRouters {
       ),
       GoRoute(
         path: kinfoHospitalScreen,
-        builder: (context, state) => InfoHospitalScreen(),
+        builder: (context, state) => const InfoHospitalScreen(),
       ),
       GoRoute(
         path: kreservationScreen,
