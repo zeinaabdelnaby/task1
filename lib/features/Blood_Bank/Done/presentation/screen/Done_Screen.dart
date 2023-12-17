@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_colors.dart';
-import 'package:go_router/go_router.dart';
 
-class Otp extends StatelessWidget {
-  const Otp({super.key});
+class Done_Screen extends StatelessWidget {
+  const Done_Screen({super.key});
 
   @override
   Widget build(BuildContext context) {

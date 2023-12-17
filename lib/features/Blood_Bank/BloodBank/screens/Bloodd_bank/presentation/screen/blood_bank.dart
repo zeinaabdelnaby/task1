@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_colors.dart';
+import 'package:flutter_grad_project/core/utils/app_routing.dart';
+import 'package:go_router/go_router.dart';
 
 class BloodBank extends StatelessWidget {
   const BloodBank({super.key});
@@ -25,11 +27,16 @@ class BloodBank extends StatelessWidget {
                 offset: const Offset(2, 3),
               )
             ], color: AppColors.white, borderRadius: BorderRadius.circular(4)),
-            child: const Padding(
+            child: Padding(
               padding: EdgeInsets.only(left: 8),
-              child: Icon(
-                Icons.arrow_back_ios,
-                color: AppColors.capital_text,
+              child: GestureDetector(
+                onTap: () {
+                  GoRouter.of(context).pop(AppRouters.kDoneRoute);
+                },
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  color: AppColors.capital_text,
+                ),
               ),
             ),
           ),
@@ -83,7 +90,10 @@ class BloodBank extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          GoRouter.of(context)
+                              .pushReplacement(AppRouters.kProfileScreenRoute);
+                        },
                         child: const Text("Donation",
                             style: TextStyle(
                               color: AppColors.blue,
@@ -103,7 +113,10 @@ class BloodBank extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          GoRouter.of(context)
+                              .pushReplacement(AppRouters.kinquiryRoute);
+                        },
                         child: const Text("Enquiry",
                             style: TextStyle(
                               color: AppColors.blue,
@@ -155,7 +168,9 @@ class BloodBank extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8)),
                     backgroundColor: const Color(0xff1f78ff),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    GoRouter.of(context).pushReplacement(AppRouters.kDoneRoute);
+                  },
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

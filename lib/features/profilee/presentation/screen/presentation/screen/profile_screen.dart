@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_colors.dart';
+import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -22,11 +24,17 @@ class ProfileScreen extends StatelessWidget {
           decoration: BoxDecoration(
               color: AppColors.floating.withOpacity(.4),
               borderRadius: BorderRadius.circular(4)),
-          child: const Padding(
+          child: Padding(
             padding: EdgeInsets.only(left: 8),
-            child: Icon(
-              Icons.arrow_back_ios,
-              color: AppColors.capital_text,
+            child: GestureDetector(
+              onTap: () {
+                GoRouter.of(context)
+                    .pushReplacement(AppRouters.kBloodBankRoute);
+              },
+              child: Icon(
+                Icons.arrow_back_ios,
+                color: AppColors.capital_text,
+              ),
             ),
           ),
         ),
