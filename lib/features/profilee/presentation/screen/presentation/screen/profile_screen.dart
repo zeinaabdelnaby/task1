@@ -53,7 +53,7 @@ class ProfileScreen extends StatelessWidget {
                           color: AppColors.capital_text,
                           fontFamily: "JosefinSans_Bold",
                           fontWeight: FontWeight.w400,
-                          fontSize: 18,
+                          fontSize: 20,
                         ),
                       ),
                     ),
