@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_custom_carousel_slider/flutter_custom_carousel_slider.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_grad_project/core/widgets/custom_page_address.dart';
@@ -12,7 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class InfoHospitalScreen extends StatefulWidget {
-  InfoHospitalScreen({super.key});
+  const InfoHospitalScreen({super.key});
 
   @override
   State<InfoHospitalScreen> createState() => _InfoHospitalScreenState();
@@ -58,7 +56,7 @@ class _InfoHospitalScreenState extends State<InfoHospitalScreen> {
                           children: [
                             Padding(
                               padding: EdgeInsets.only(left: 45.0.w),
-                              child: StarRow(),
+                              child: const StarRow(),
                             ),
                             Text(
                               "(200 Review )",
@@ -72,9 +70,8 @@ class _InfoHospitalScreenState extends State<InfoHospitalScreen> {
                       ),
                     ])),
               ),
-              Stack(
-                alignment: AlignmentDirectional.center, children: [
-                Container(
+              Stack(alignment: AlignmentDirectional.center, children: [
+                SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: 247.2.h,
                     child: Image.asset(
@@ -181,7 +178,7 @@ class _InfoHospitalScreenState extends State<InfoHospitalScreen> {
                               fontFamily: "JosefinSans_SemiBold",
                               fontWeight: FontWeight.w400,
                               fontSize: 15.sp,
-                              color: Color(0xFF000000)),
+                              color: const Color(0xFF000000)),
                         ),
                         onPressed: () {
                           GoRouter.of(context)
@@ -209,7 +206,7 @@ class _InfoHospitalScreenState extends State<InfoHospitalScreen> {
 }
 
 class Imagee extends StatelessWidget {
-  Imagee({super.key});
+  const Imagee({super.key});
 
   @override
   Widget build(BuildContext context) {

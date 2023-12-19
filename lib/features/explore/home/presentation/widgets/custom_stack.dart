@@ -38,7 +38,7 @@ class CustomStack extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 14.0, left: 30),
                   child: Container(
                     padding: const EdgeInsets.only(left: 17),
-                    child:  Column(
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
@@ -64,19 +64,19 @@ class CustomStack extends StatelessWidget {
                     ),
                   ),
                 ),
-                 Padding(
-                  padding: EdgeInsets.only(top: 100.0),
+                Padding(
+                  padding: const EdgeInsets.only(top: 100.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Padding(
+                      const Padding(
                           padding: EdgeInsets.only(left: 10.0),
                           child: StarRow()),
                       CurtomReadMoreButton(
                         width: 17.28.w,
                         height: 17.28.h,
                         size: 9.21.sp,
-                        color: Color(0xFF0165FC),
+                        color: const Color(0xFF0165FC),
                       )
                     ],
                   ),
@@ -88,12 +88,13 @@ class CustomStack extends StatelessWidget {
             right: 97,
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(20.0),
-                child: Container(
-                  width: 87.56.w,
-                  height: 102.56.h,
-                  child: Image.asset("assets/images/hospital.png",
-                  fit: BoxFit.cover,
-                  ))),
+                child: SizedBox(
+                    width: 87.56.w,
+                    height: 102.56.h,
+                    child: Image.asset(
+                      "assets/images/hospital.png",
+                      fit: BoxFit.cover,
+                    ))),
           ),
           Positioned(
             left: -10,

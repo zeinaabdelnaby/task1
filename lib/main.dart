@@ -20,18 +20,15 @@ class HealthCareConnectionApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (_, child) {
-          return MaterialApp(
-            home: HospitalsScreen(),
+          return MaterialApp.router(
+            theme: ThemeData.light().copyWith(
+                scaffoldBackgroundColor: const Color(0xffE9E9E9),
+                textTheme: const TextTheme(
+                    bodyMedium: TextStyle(
+                        fontFamily: 'josefinSans', color: Colors.black))),
+            debugShowCheckedModeBanner: false,
+            routerConfig: AppRouters.router,
           );
-          //  MaterialApp.router(
-          //   theme: ThemeData.light().copyWith(
-          //       scaffoldBackgroundColor: const Color(0xffE9E9E9),
-          //       textTheme: const TextTheme(
-          //           bodyMedium: TextStyle(
-          //               fontFamily: 'josefinSans', color: Colors.black))),
-          //   debugShowCheckedModeBanner: false,
-          //   routerConfig: AppRouters.router,
-          // );
         });
   }
 }

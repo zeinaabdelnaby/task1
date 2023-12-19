@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_grad_project/core/widgets/custom_navbar.dart';
 import 'package:flutter_grad_project/core/widgets/custom_page_address.dart';
 import 'package:flutter_grad_project/features/explore/hospitals/presentation/widgets/custom_stack2.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,14 +14,15 @@ class _HospitalsScreenState extends State<HospitalsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFE9E9E9),
+      backgroundColor: const Color(0xFFE9E9E9),
       // bottomNavigationBar: CustomNavBar(),
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 9.w, vertical: 46.h),
+        padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 46.h),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              CustomPageAddress(icon: Icons.arrow_back, add: "X-Rays Department"),
+              const CustomPageAddress(
+                  icon: Icons.arrow_back, add: "X-Rays Department"),
               SizedBox(
                 height: 26.h,
               ),
@@ -32,12 +31,12 @@ class _HospitalsScreenState extends State<HospitalsScreen> {
                 child: Text(
                   "all hospitals",
                   style: TextStyle(
-                    color: Color(0xFF0165FC),
+                    color: const Color(0xFF0165FC),
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w400,
                     fontFamily: "JosefinSans_Italic",
                     decoration: TextDecoration.underline,
-                    decorationColor: Color(0xFF0165FC),
+                    decorationColor: const Color(0xFF0165FC),
                   ),
                 ),
               ),
@@ -45,17 +44,16 @@ class _HospitalsScreenState extends State<HospitalsScreen> {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     mainAxisSpacing: 3,
                     crossAxisSpacing: 0,
                     childAspectRatio: 0.75,
                   ),
-                  itemBuilder: (_, index) => CustomStack2(),
+                  itemBuilder: (_, index) => const CustomStack2(),
                   itemCount: 7,
                 ),
               )
-              
             ],
           ),
         ),
@@ -63,4 +61,3 @@ class _HospitalsScreenState extends State<HospitalsScreen> {
     );
   }
 }
-

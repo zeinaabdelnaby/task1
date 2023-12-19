@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_grad_project/core/widgets/custom_navbar.dart';
 import 'package:flutter_grad_project/core/widgets/custom_rawMaterialButton.dart';
 import 'package:flutter_grad_project/features/explore/home/presentation/widgets/custom_stack.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,11 +18,11 @@ class _HomeScreenState extends State<HomeScreen> {
       // bottomNavigationBar: const CustomNavBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(top:46.0.h),
+          padding: EdgeInsets.only(top: 46.0.h),
           child: Column(
             children: [
               Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 16.1.w),
+                padding: EdgeInsets.symmetric(horizontal: 16.1.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -42,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               BoxShadow(
                                 color: const Color(0xFFEDA963).withOpacity(.5),
                                 blurRadius: 4.dg,
-                                offset:  Offset(0.dg, 4.dg),
+                                offset: Offset(0.dg, 4.dg),
                               ),
                             ],
                           ),
@@ -54,13 +53,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: const Color(0xFF3A89FF),
                               borderRadius: BorderRadius.circular(25.dg)),
                           child: Padding(
-                            padding:  EdgeInsets.only(left: 60.dg, top: 10.dg),
+                            padding: EdgeInsets.only(left: 60.dg, top: 10.dg),
                             child: Text(
                               "search hospital",
                               style: TextStyle(
                                   fontSize: 14.sp,
                                   fontFamily: 'JosefinSans_Light',
-                                  color: const Color(0xFFFFFFFF).withOpacity(.7),
+                                  color:
+                                      const Color(0xFFFFFFFF).withOpacity(.7),
                                   fontWeight: FontWeight.w900),
                             ),
                           ),
@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 borderRadius: BorderRadius.circular(25.dg)),
                             child: IconButton(
                                 onPressed: () {},
-                                icon:  Icon(
+                                icon: const Icon(
                                   Icons.search,
                                   color: Color(0xFFFFFFFF),
                                   size: 18.07,
@@ -88,22 +88,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-               SizedBox(height: 31.h),
+              SizedBox(height: 31.h),
               Stack(
                 children: [
-                  Container(
+                  SizedBox(
                     width: 372.w,
                     child: Image.asset(
                       "assets/images/banner.png",
                       fit: BoxFit.cover,
                     ),
                   ),
-                   Positioned(
+                  Positioned(
                     top: 35,
                     left: 226,
                     child: SizedBox(
                       height: 61.h,
-                      child: VerticalDivider(
+                      child: const VerticalDivider(
                         color: Color(0xFFFFFFFF),
                         thickness: 1,
                       ),
@@ -117,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ))
                 ],
               ),
-               SizedBox(
+              SizedBox(
                 height: 50.h,
               ),
               Column(
@@ -125,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Column(
                     children: [
-                       Text(
+                      Text(
                         "Departments",
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
@@ -140,14 +140,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     // height: MediaQuery.of(context).size.height,
                     height: 300,
                     child: GridView.builder(
-                                  gridDelegate:
-                    SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-                                  itemBuilder: (_, index) => Padding(
-                                    padding: const EdgeInsets.only(right:12.0),
-                                    child: CustomStack(),
-                                  ),
-                                  itemCount: 6,
-                                ),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2),
+                      itemBuilder: (_, index) => const Padding(
+                        padding: EdgeInsets.only(right: 12.0),
+                        child: CustomStack(),
+                      ),
+                      itemCount: 6,
+                    ),
                   ),
                 ],
               ),

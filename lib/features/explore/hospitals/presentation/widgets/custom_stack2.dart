@@ -15,7 +15,7 @@ class CustomStack2 extends StatelessWidget {
         GoRouter.of(context).push(AppRouters.kinfoHospitalScreen);
       },
       child: Padding(
-        padding: const EdgeInsets.only(bottom:8,left: 8,right: 8),
+        padding: const EdgeInsets.only(bottom: 8, left: 8, right: 8),
         child: Container(
           width: 256,
           height: 225,
@@ -24,24 +24,23 @@ class CustomStack2 extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
           child: Stack(children: [
-            Container(
-              width: MediaQuery.of(context).size.width ,
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(20.0),
                   child: Image.asset("assets/images/hospital2.png",
-                  fit: BoxFit.cover
-                  )),
+                      fit: BoxFit.cover)),
             ),
-             Padding(
-              padding: EdgeInsets.only(top: 160.0),
+            Padding(
+              padding: const EdgeInsets.only(top: 160.0),
               child: Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 10.0),
+                    padding: const EdgeInsets.only(left: 10.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 8,
                         ),
                         Text(
@@ -58,14 +57,14 @@ class CustomStack2 extends StatelessWidget {
                               fontSize: 13.sp,
                               fontFamily: 'JosefinSans_Light'),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
-                        StarRow()
+                        const StarRow()
                       ],
                     ),
                   ),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(left: 20, top: 45),
                     child: CurtomReadMoreButton(
                       width: 30,
@@ -77,7 +76,6 @@ class CustomStack2 extends StatelessWidget {
                 ],
               ),
             ),
-           
           ]),
         ),
       ),
