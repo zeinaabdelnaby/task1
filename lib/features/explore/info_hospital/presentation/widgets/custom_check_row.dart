@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomCheckRow extends StatelessWidget {
   const CustomCheckRow({super.key});
@@ -12,7 +13,7 @@ class CustomCheckRow extends StatelessWidget {
             elevation: 0.0,
             child: Icon(
               Icons.check,
-              size: 15,
+              size: 15.sp,
               color: Color(0xFFFFFFFF),
             ),
             onPressed: () {},
@@ -29,7 +30,7 @@ class CustomCheckRow extends StatelessWidget {
             color: Color(0xFF000000),
               fontFamily: "JosefinSans_Light",
               fontWeight: FontWeight.w300,
-              fontSize: 11),
+              fontSize: 11.sp),
         )
       ],
     );

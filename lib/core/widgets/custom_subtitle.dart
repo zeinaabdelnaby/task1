@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomSubTitle extends StatelessWidget {
   const CustomSubTitle({
@@ -17,7 +18,7 @@ class CustomSubTitle extends StatelessWidget {
       style: TextStyle(
           fontFamily: "JosefinSans_SemiBold",
           fontWeight: FontWeight.w400,
-          fontSize: 16),
+          fontSize: 16.sp),
     );
   }
 }

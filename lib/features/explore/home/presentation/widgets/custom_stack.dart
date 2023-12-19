@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_grad_project/core/widgets/custom_read_more_button.dart';
 import 'package:flutter_grad_project/core/widgets/custom_starRow.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomStack extends StatelessWidget {
@@ -16,18 +17,18 @@ class CustomStack extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-              width: 179,
-              height: 170,
+              width: 179.w,
+              height: 190.h,
               decoration: BoxDecoration(
                 color: const Color(0xFF3A89FF).withOpacity(.5),
                 borderRadius: BorderRadius.circular(20),
               )),
           Positioned(
             right: 0,
-            top: 6,
+            top: 5,
             child: Container(
-              width: 125,
-              height: 150,
+              width: 125.w,
+              height: 170.h,
               decoration: BoxDecoration(
                 color: const Color(0xFFE9E9E9),
                 borderRadius: BorderRadius.circular(20),
@@ -36,19 +37,19 @@ class CustomStack extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 14.0, left: 30),
                   child: Container(
-                    padding: const EdgeInsets.only(left: 20),
-                    child: const Column(
+                    padding: const EdgeInsets.only(left: 17),
+                    child:  Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           "department name",
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
-                              fontSize: 8,
+                              fontSize: 8.sp,
                               fontFamily: 'JosefinSans_Bold'),
                         ),
                         SizedBox(
-                          height: 5,
+                          height: 5.77.h,
                         ),
                         Text(
                           "Lorem ipsum dolor \nsit met, connecter adipescent \nalit, Carabid \n-tur auctor Justo alit. Lorem \nipsum dolor \nsit met, connecter adipescent \nalit, Carabid \n-tur auctor Justo alit.",
@@ -56,14 +57,14 @@ class CustomStack extends StatelessWidget {
                               height: 1.2,
                               wordSpacing: -5,
                               fontWeight: FontWeight.w400,
-                              fontSize: 6,
+                              fontSize: 6.sp,
                               fontFamily: 'JosefinSans_SimiBold'),
                         )
                       ],
                     ),
                   ),
                 ),
-                const Padding(
+                 Padding(
                   padding: EdgeInsets.only(top: 100.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,9 +73,9 @@ class CustomStack extends StatelessWidget {
                           padding: EdgeInsets.only(left: 10.0),
                           child: StarRow()),
                       CurtomReadMoreButton(
-                        width: 17.28,
-                        height: 17.28,
-                        size: 9.21,
+                        width: 17.28.w,
+                        height: 17.28.h,
+                        size: 9.21.sp,
                         color: Color(0xFF0165FC),
                       )
                     ],
@@ -84,11 +85,15 @@ class CustomStack extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: 80,
-            top: 1,
+            right: 97,
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(20.0),
-                child: Image.asset("assets/images/hospital.png")),
+                child: Container(
+                  width: 87.56.w,
+                  height: 102.56.h,
+                  child: Image.asset("assets/images/hospital.png",
+                  fit: BoxFit.cover,
+                  ))),
           ),
           Positioned(
             left: -10,

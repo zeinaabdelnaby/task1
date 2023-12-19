@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
+import 'package:flutter_grad_project/features/explore/home/presentation/screen/home_screen.dart';
+import 'package:flutter_grad_project/features/explore/hospitals/presentation/screen/hospitals_screen.dart';
+import 'package:flutter_grad_project/features/explore/info_hospital/presentation/screen/info_hospital_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
@@ -17,15 +20,18 @@ class HealthCareConnectionApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (_, child) {
-          return MaterialApp.router(
-            theme: ThemeData.light().copyWith(
-                scaffoldBackgroundColor: const Color(0xffE9E9E9),
-                textTheme: const TextTheme(
-                    bodyMedium: TextStyle(
-                        fontFamily: 'josefinSans', color: Colors.black))),
-            debugShowCheckedModeBanner: false,
-            routerConfig: AppRouters.router,
+          return MaterialApp(
+            home: HospitalsScreen(),
           );
+          //  MaterialApp.router(
+          //   theme: ThemeData.light().copyWith(
+          //       scaffoldBackgroundColor: const Color(0xffE9E9E9),
+          //       textTheme: const TextTheme(
+          //           bodyMedium: TextStyle(
+          //               fontFamily: 'josefinSans', color: Colors.black))),
+          //   debugShowCheckedModeBanner: false,
+          //   routerConfig: AppRouters.router,
+          // );
         });
   }
 }
