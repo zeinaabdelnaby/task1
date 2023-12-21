@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
+import 'package:flutter_grad_project/core/widgets/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SharedPref.init();
   runApp(const HealthCareConnectionApp());
 }
 
