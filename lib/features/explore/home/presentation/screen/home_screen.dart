@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFE9E9E9),
-      bottomNavigationBar: const CustomNavBar(),
+      // bottomNavigationBar: const CustomNavBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 15),
         child: SingleChildScrollView(
