@@ -57,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen>
     Timer(
         const Duration(seconds: 6),
         () => GoRouter.of(context).pushReplacement(
-            Shared.pref.getString("national id") != null
+            SharedPref.pref.getString("national id") != null
                 ? AppRouters.khomeScreen
                 : AppRouters.konboarding));
   }
