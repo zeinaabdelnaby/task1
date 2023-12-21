@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
+import 'package:flutter_grad_project/core/widgets/services.dart';
 import 'package:flutter_grad_project/features/splash/presentation/widget/animated_logo_&_name.dart';
 import 'package:go_router/go_router.dart';
 
@@ -52,9 +53,13 @@ class _SplashScreenState extends State<SplashScreen>
       });
     });
 
-    Timer(const Duration(seconds: 6), () {
-      GoRouter.of(context).pushReplacement(AppRouters.konboarding);
-    });
+
+    Timer(
+        const Duration(seconds: 6),
+        () => GoRouter.of(context).pushReplacement(
+            Shared.pref.getString("national id") != null
+                ? AppRouters.khomeScreen
+                : AppRouters.konboarding));
   }
 
   @override
