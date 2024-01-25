@@ -15,7 +15,7 @@ class _HospitalsScreenState extends State<HospitalsScreen> {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Color(0xFFE9E9E9),
-      bottomNavigationBar: CustomNavBar(),
+      // bottomNavigationBar: CustomNavBar(),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15),
         child: SingleChildScrollView(
