@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/widgets/custom_rawMaterialButton.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomPageAddress extends StatelessWidget {
   const CustomPageAddress({super.key, required this.icon, required this.add});
@@ -15,12 +16,12 @@ class CustomPageAddress extends StatelessWidget {
           icon: icon,
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 60.0),
+          padding:  EdgeInsets.only(left: 46.w),
           child: Text(
             add,
-            style: const TextStyle(
+            style:  TextStyle(
                 fontFamily: "JosefinSans_SemiBold",
-                fontSize: 20,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w400),
           ),
         )

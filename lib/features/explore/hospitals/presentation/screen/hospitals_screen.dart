@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_grad_project/core/widgets/custom_navbar.dart';
 import 'package:flutter_grad_project/core/widgets/custom_page_address.dart';
 import 'package:flutter_grad_project/features/explore/hospitals/presentation/widgets/custom_stack2.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HospitalsScreen extends StatefulWidget {
   const HospitalsScreen({super.key});
@@ -13,44 +13,46 @@ class HospitalsScreen extends StatefulWidget {
 class _HospitalsScreenState extends State<HospitalsScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xFFE9E9E9),
+    return Scaffold(
+      backgroundColor: const Color(0xFFE9E9E9),
       // bottomNavigationBar: CustomNavBar(),
       body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 46.h),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              CustomPageAddress(
+              const CustomPageAddress(
                   icon: Icons.arrow_back, add: "X-Rays Department"),
+              SizedBox(
+                height: 26.h,
+              ),
               Padding(
-                padding: EdgeInsets.only(left: 200.0, top: 30),
+                padding: EdgeInsets.only(left: 240.w, bottom: 0),
                 child: Text(
                   "all hospitals",
                   style: TextStyle(
-                    color: Color(0xFF0165FC),
-                    fontSize: 20,
+                    color: const Color(0xFF0165FC),
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.w400,
                     fontFamily: "JosefinSans_Italic",
                     decoration: TextDecoration.underline,
-                    decorationColor: Color(0xFF0165FC),
+                    decorationColor: const Color(0xFF0165FC),
                   ),
                 ),
               ),
               SizedBox(
-                height: 10,
-              ),
-              Wrap(
-                spacing: 15,
-                runSpacing: 15,
-                children: <Widget>[
-                  CustomStack2(),
-                  CustomStack2(),
-                  CustomStack2(),
-                  CustomStack2(),
-                  CustomStack2(),
-                  CustomStack2(),
-                ],
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 3,
+                    crossAxisSpacing: 0,
+                    childAspectRatio: 0.75,
+                  ),
+                  itemBuilder: (_, index) => const CustomStack2(),
+                  itemCount: 7,
+                ),
               )
             ],
           ),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
-import 'package:flutter_grad_project/core/widgets/services.dart';
+import 'package:flutter_grad_project/features/explore/home/presentation/screen/home_screen.dart';
+import 'package:flutter_grad_project/features/explore/hospitals/presentation/screen/hospitals_screen.dart';
+import 'package:flutter_grad_project/features/explore/info_hospital/presentation/screen/info_hospital_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await SharedPref.init();
+void main() {
   runApp(const HealthCareConnectionApp());
 }
 

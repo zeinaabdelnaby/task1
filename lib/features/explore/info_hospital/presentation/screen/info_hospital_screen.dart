@@ -6,6 +6,7 @@ import 'package:flutter_grad_project/core/widgets/custom_read_more_button.dart';
 import 'package:flutter_grad_project/core/widgets/custom_starRow.dart';
 import 'package:flutter_grad_project/core/widgets/custom_subtitle.dart';
 import 'package:flutter_grad_project/features/explore/info_hospital/presentation/widgets/custom_check_row.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class InfoHospitalScreen extends StatefulWidget {
@@ -31,97 +32,111 @@ class _InfoHospitalScreenState extends State<InfoHospitalScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFE9E9E9),
       body: Padding(
-        padding:
-            const EdgeInsets.only(top: 57.0, left: 20, right: 20, bottom: 17),
+        padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 46.h),
         child: SingleChildScrollView(
           child: Column(
             children: [
               const CustomPageAddress(
                   icon: Icons.keyboard_double_arrow_left,
                   add: 'Hospital Details'),
-              const SizedBox(
-                height: 45.85,
+              SizedBox(
+                height: 45.85.h,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 200.0),
                 child: SizedBox(
-                    height: 76,
-                    width: 120,
+                    height: 76.h,
+                    width: 120.w,
                     child: Stack(children: [
                       Image.asset("assets/images/rating_button.png"),
-                      const Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 47.0),
-                            child: StarRow(),
-                          ),
-                          Text(
-                            "(200 Review )",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w200,
-                                fontSize: 8,
-                                fontFamily: "JosefinSans_Light"),
-                          )
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 15.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(left: 45.0.w),
+                              child: const StarRow(),
+                            ),
+                            Text(
+                              "(200 Review )",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w200,
+                                  fontSize: 8.sp,
+                                  fontFamily: "JosefinSans_Light"),
+                            )
+                          ],
+                        ),
                       ),
                     ])),
               ),
-              Container(
-                clipBehavior: Clip.hardEdge,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(180.0),
-                  color: Colors.transparent,
-                ), // BoxDecoration
-                width: 304.07,
-                height: 187.41,
-                child: CustomCarouselSlider(
-                  items: items
-                      .map(
-                        (image) => CarouselItem(
-                          image: AssetImage(image),
-                          boxDecoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(180.0),
-                          ),
-                        ),
-                      )
-                      .toList(),
-                  unselectedDotColor: const Color(0xFFFFFFFF),
-                  selectedDotColor: const Color(0xFF010101),
-                  height: 187.41,
-                  width: 304.07,
-                  autoplay: true,
+              Stack(alignment: AlignmentDirectional.center, children: [
+                SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: 247.2.h,
+                    child: Image.asset(
+                      "assets/images/slider_shadow.png",
+                      fit: BoxFit.cover,
+                    )),
+                Positioned(
+                  top: 0,
+                  child: Container(
+                    clipBehavior: Clip.hardEdge,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(180.0),
+                      color: Colors.transparent,
+                    ), // BoxDecoration
+                    width: 310.07.w,
+                    height: 210.41.h,
+                    child: CustomCarouselSlider(
+                      items: items
+                          .map(
+                            (image) => CarouselItem(
+                              image: AssetImage(image),
+                              boxDecoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(180.0),
+                              ),
+                            ),
+                          )
+                          .toList(),
+                      unselectedDotColor: const Color(0xFFFFFFFF),
+                      selectedDotColor: const Color(0xFF010101),
+                      height: 187.41.h,
+                      width: 304.07.w,
+                      autoplay: true,
+                    ),
+                  ),
                 ),
-              ),
+              ]),
               // Center(
               //   child: DotsIndicator(
               //     dotsCount: items.length,
               //     position: currentIndex,
               //     decorator: DotsDecorator(
               //       activeColor: Color(0xFF010101),
-              //       color: const Color(0xFFFFFFFF),
+              //       color:  Color(0xFFFFFFFF),
               //       spacing :EdgeInsets.symmetric(horizontal: 4.26),
-              //       size: const Size.square(6),
-              //       activeSize: const Size(10.68, 4.87),
+              //       size:  Size.square(6),
+              //       activeSize:  Size(10.68, 4.87),
               //       activeShape: RoundedRectangleBorder(
               //           borderRadius: BorderRadius.circular(5.0)),
               //     ),
               //   ),
               // ),
-              const SizedBox(
-                height: 67.84,
+              SizedBox(
+                height: 79.84.h,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
-                      const Text(
+                      Text(
                         "Hospital Name",
                         style: TextStyle(
                             fontFamily: "JosefinSans_SemiBold",
                             fontWeight: FontWeight.w400,
-                            fontSize: 20),
+                            fontSize: 20.sp),
                       ),
                       CurtomReadMoreButton(
                         width: 28.74,
@@ -157,13 +172,13 @@ class _InfoHospitalScreenState extends State<InfoHospitalScreen> {
                           Icons.credit_card,
                           color: Color(0xFF2C80FE),
                         ),
-                        label: const Text(
+                        label: Text(
                           "Booking",
                           style: TextStyle(
                               fontFamily: "JosefinSans_SemiBold",
                               fontWeight: FontWeight.w400,
-                              fontSize: 15,
-                              color: Color(0xFF000000)),
+                              fontSize: 15.sp,
+                              color: const Color(0xFF000000)),
                         ),
                         onPressed: () {
                           GoRouter.of(context)
@@ -198,7 +213,7 @@ class Imagee extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(180.0),
-        // image: const DecorationImage(
+        // image:  DecorationImage(
         //   // image: AssetImage(),
         //   fit: BoxFit.fill,
         // ),
