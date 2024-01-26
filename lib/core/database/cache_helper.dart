@@ -23,24 +23,20 @@ class CacheHelper {
     }
   }
 
-//! this method to get data already saved in local database
-
   dynamic getData({required String key}) {
     return sharedPreferences.get(key);
   }
-
-//! remove data using specific key
 
   Future<bool> removeData({required String key}) async {
     return await sharedPreferences.remove(key);
   }
 
-//! this method to check if local database contains {key}
+//check if local database contains key
   Future<bool> containsKey({required String key}) async {
     return sharedPreferences.containsKey(key);
   }
 
-  Future<bool> clearData({required String key}) async {
+  Future<bool> clearData() async {
     return sharedPreferences.clear();
   }
 }

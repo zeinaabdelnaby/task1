@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_grad_project/core/database/cache_helper.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_grad_project/features/onboarding/presentation/widgets/onboarding1.dart';
 import 'package:flutter_grad_project/features/onboarding/presentation/widgets/onboarding2.dart';
@@ -103,6 +104,7 @@ class _OnboardingState extends State<Onboarding> {
   }
 
   onTapButton() {
+    CacheHelper().saveData(key: 'isVisited', value: true);
     if (pageIndex < 2) {
       pageIndex++;
       pageController.nextPage(

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_grad_project/core/database/cache_helper.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_grad_project/features/splash/presentation/widget/animated_logo_&_name.dart';
 import 'package:go_router/go_router.dart';
@@ -21,6 +22,8 @@ class _SplashScreenState extends State<SplashScreen>
 
   AnimationController? _controller;
   Animation<double>? animation1;
+
+  bool isVisited = CacheHelper().getData(key: 'isVisited') ?? false;
 
   @override
   void initState() {
@@ -52,8 +55,13 @@ class _SplashScreenState extends State<SplashScreen>
       });
     });
 
-    Timer(const Duration(seconds: 6),
-        () => GoRouter.of(context).pushReplacement(AppRouters.konboarding));
+    Timer(const Duration(seconds: 6), () {
+      if (isVisited == true) {
+        GoRouter.of(context).pushReplacement(AppRouters.kSigninScreen);
+      } else {
+        GoRouter.of(context).pushReplacement(AppRouters.konboarding);
+      }
+    });
   }
 
   @override
