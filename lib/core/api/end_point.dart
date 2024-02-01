@@ -1,9 +1,9 @@
 class EndPoint {
-  static String baseUrl = "";
+  static String baseUrl = "http://www.healthycare2024.somee.com";
 }
 
 class ApiKey {
-  static String token = "token";
+  static String token = "Authorization";
   static String status = "status";
-  static String errorMessage = "ErrorMessage";
+  static String errorMessage = "message";
 }
