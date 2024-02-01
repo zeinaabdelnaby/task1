@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  CacheHelper.init();
+  await CacheHelper.init();
   setupServiceLocator();
   runApp(const HealthCareConnectionApp());
 }
