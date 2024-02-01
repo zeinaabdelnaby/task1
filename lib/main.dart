@@ -3,9 +3,9 @@ import 'package:flutter_grad_project/core/database/cache_helper.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await CacheHelper().init();
+void main() {
+  WidgetsFlutterBinding.ensureInitialized;
+  CacheHelper().init();
   runApp(const HealthCareConnectionApp());
 }
 
