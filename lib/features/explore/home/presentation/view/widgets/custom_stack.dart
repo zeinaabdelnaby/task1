@@ -6,7 +6,7 @@ import 'package:flutter_grad_project/core/widgets/custom_starRow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../../core/models/home_model.dart';
+import '../../../data/model/home_model.dart';
 
 class CustomStack extends StatelessWidget {
   CustomStack({this.homeItemModel, super.key});

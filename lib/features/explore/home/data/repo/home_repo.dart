@@ -1,5 +1,4 @@
 import 'package:flutter_grad_project/core/api/api_services.dart';
-import 'package:flutter_grad_project/core/api/dio_consumer.dart';
 
 class HomeRepository {
   final ApiServices apiServices;

@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_grad_project/core/models/home_model.dart';
+import 'package:flutter_grad_project/features/explore/home/data/model/home_model.dart';
 import 'package:flutter_grad_project/features/explore/home/presentation/view_model/home_cubit/home_states.dart';
 
 import '../../../data/repo/home_repo.dart';
