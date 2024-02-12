@@ -1,13 +1,14 @@
+import 'package:flutter_grad_project/core/api/api_services.dart';
 import 'package:flutter_grad_project/core/api/dio_consumer.dart';
 
 class HomeRepository {
-  final DioConsumer dioConsumer;
+  final ApiServices apiServices;
 
-  HomeRepository(this.dioConsumer);
+  HomeRepository(this.apiServices);
 
   Future<dynamic> getHomeData() async {
     Map<String, dynamic> response =
-        await dioConsumer.get("/api/PatientMobile/Department/GetAll");
+        await apiServices.get("/api/PatientMobile/Department/GetAll");
     print(response.toString());
 
     return response;
@@ -15,7 +16,7 @@ class HomeRepository {
 
   Future<dynamic> addDate({String? data, String? name}) async {
     Map<String, dynamic> response =
-        await dioConsumer.post("link Post", body: {"name": name, "data": data}
+        await apiServices.post("link Post", body: {"name": name, "data": data}
             // isFromData: true,
             );
     print(response.toString());

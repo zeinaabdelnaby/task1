@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_grad_project/core/api/dio_consumer.dart';
 import 'package:flutter_grad_project/core/database/cache_helper.dart';
-import 'package:flutter_grad_project/core/repositories/home_repo.dart';
+import 'package:flutter_grad_project/features/explore/home/data/repo/home_repo.dart';
 import 'package:flutter_grad_project/core/services/services_locator.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_grad_project/features/explore/home/presentation/view_model/home_cubit/home_cubit.dart';

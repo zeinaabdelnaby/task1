@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_grad_project/core/models/home_model.dart';
 import 'package:flutter_grad_project/features/explore/home/presentation/view_model/home_cubit/home_states.dart';
 
-import '../../../../../../core/repositories/home_repo.dart';
+import '../../../data/repo/home_repo.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this.homeRepository) : super(HomeLoading());
