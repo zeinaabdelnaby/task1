@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_grad_project/core/widgets/custom_read_more_button.dart';
 import 'package:flutter_grad_project/core/widgets/custom_starRow.dart';
+import 'package:flutter_grad_project/features/explore/hospitals/data/model/hospitals_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomStack2 extends StatelessWidget {
-  const CustomStack2({super.key});
+  CustomStack2({this.resource, super.key});
+  Resource? resource;
 
   @override
   Widget build(BuildContext context) {
@@ -44,14 +46,14 @@ class CustomStack2 extends StatelessWidget {
                           height: 8,
                         ),
                         Text(
-                          "hospital name",
+                          resource?.name ?? '',
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 12.sp,
                               fontFamily: 'JosefinSans_Bold'),
                         ),
                         Text(
-                          "Lorem \nipsum.",
+                          resource?.hospitalCount.toString() ?? '',
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 13.sp,

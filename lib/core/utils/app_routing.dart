@@ -9,7 +9,7 @@ import 'package:flutter_grad_project/features/auth/feature/user_required_data/pr
 import 'package:flutter_grad_project/features/auth/feature/user_required_data/presentation/screen/user_data_form.dart';
 import 'package:flutter_grad_project/features/booking_done/presentation/screen/booking_done_screen.dart';
 import 'package:flutter_grad_project/features/explore/home/presentation/screen/home_screen.dart';
-import 'package:flutter_grad_project/features/explore/hospitals/presentation/screen/hospitals_screen.dart';
+import 'package:flutter_grad_project/features/explore/hospitals/presentation/view/screen/hospitals_screen.dart';
 import 'package:flutter_grad_project/features/explore/info_hospital/presentation/screen/info_hospital_screen.dart';
 import 'package:flutter_grad_project/features/onboarding/presentation/screen/onboarding_screen.dart';
 import 'package:flutter_grad_project/features/profilee/presentation/screen/presentation/screen/profile_screen.dart';
