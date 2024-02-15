@@ -13,7 +13,7 @@ import 'package:flutter_grad_project/features/explore/hospitals/presentation/scr
 import 'package:flutter_grad_project/features/explore/info_hospital/presentation/screen/info_hospital_screen.dart';
 import 'package:flutter_grad_project/features/onboarding/presentation/screen/onboarding_screen.dart';
 import 'package:flutter_grad_project/features/profilee/presentation/screen/presentation/screen/profile_screen.dart';
-import 'package:flutter_grad_project/features/reception/reservation/presentation/screen/reservation.dart';
+import 'package:flutter_grad_project/features/reception/reservation/presentation/view/screen/reservation.dart';
 import 'package:flutter_grad_project/features/splash/presentation/screen/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
