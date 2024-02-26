@@ -7,16 +7,6 @@ import '../../../data/repo/home_repo.dart';
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this.homeRepository) : super(HomeLoading());
   HomeRepository homeRepository;
-  // DioConsumer dioConsumer;
-  // void get({required String path}) async {
-  //   emit(HomeLoading());
-  //   try {
-  //     await dioConsumer.get("/api/PatientMobile/Department/GetAll?CategoryId");
-  //     emit(HomeSuccess());
-  //   } on Exception catch (e) {
-  //     emit(HomeFailure());
-  //   }
-  // }
   HomeModel? homeModel;
   getHomeData() {
     emit(HomeLoading());

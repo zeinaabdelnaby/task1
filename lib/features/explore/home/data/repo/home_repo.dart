@@ -13,13 +13,4 @@ class HomeRepository {
     return response;
   }
 
-  Future<dynamic> addDate({String? data, String? name}) async {
-    Map<String, dynamic> response =
-        await apiServices.post("link Post", body: {"name": name, "data": data}
-            // isFromData: true,
-            );
-    print(response.toString());
-
-    return response;
-  }
 }

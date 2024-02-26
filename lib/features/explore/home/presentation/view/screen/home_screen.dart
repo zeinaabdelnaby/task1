@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_grad_project/core/widgets/custom_rawMaterialButton.dart';
+import 'package:flutter_grad_project/features/explore/home/presentation/view/widgets/custom_item.dart';
 import 'package:flutter_grad_project/features/explore/home/presentation/view/widgets/custom_stack.dart';
 import 'package:flutter_grad_project/features/explore/home/presentation/view_model/home_cubit/home_cubit.dart';
 import 'package:flutter_grad_project/features/explore/home/presentation/view_model/home_cubit/home_states.dart';
@@ -170,19 +171,28 @@ class _HomeScreenState extends State<HomeScreen> {
                               width: MediaQuery.of(context).size.width,
                               // height: MediaQuery.of(context).size.height,
                               height: 300,
-                              child: GridView.builder(
+                              child: ListView.builder(
                                 itemCount: cubit.homeModel!.resource!.length,
-                                gridDelegate:
-                                    const SliverGridDelegateWithFixedCrossAxisCount(
-                                        crossAxisCount: 2),
                                 itemBuilder: (context, index) => Padding(
                                   padding: const EdgeInsets.only(right: 12.0),
-                                  child: CustomStack(
+                                  child: CustomItem(
                                     homeItemModel:
                                         cubit.homeModel!.resource![index],
                                   ),
-                                ),
-                              ),
+                                ),),
+                              // child: GridView.builder(
+                              //   itemCount: cubit.homeModel!.resource!.length,
+                              //   gridDelegate:
+                              //       const SliverGridDelegateWithFixedCrossAxisCount(
+                              //           crossAxisCount: 2),
+                              //   itemBuilder: (context, index) => Padding(
+                              //     padding: const EdgeInsets.only(right: 12.0),
+                              //     child: CustomStack(
+                              //       homeItemModel:
+                              //           cubit.homeModel!.resource![index],
+                              //     ),
+                              //   ),
+                              // ),
                             ),
                           ],
                         ),

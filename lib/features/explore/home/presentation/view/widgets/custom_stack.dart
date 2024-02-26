@@ -48,7 +48,7 @@ class CustomStack extends StatelessWidget {
                           homeItemModel!.name ?? '',
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
-                              fontSize: 8.sp,
+                              fontSize: 10.sp,
                               fontFamily: 'JosefinSans_Bold'),
                         ),
                         SizedBox(
@@ -60,7 +60,7 @@ class CustomStack extends StatelessWidget {
                               height: 1.2,
                               wordSpacing: -5,
                               fontWeight: FontWeight.w400,
-                              fontSize: 6.sp,
+                              fontSize: 9.sp,
                               fontFamily: 'JosefinSans_SimiBold'),
                         )
                       ],
@@ -88,12 +88,12 @@ class CustomStack extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: 97,
+            right: 76,
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(20.0),
                 child: SizedBox(
-                  width: 87.56.w,
-                  height: 102.56.h,
+                  width: 107.56.w,
+                  height: 132.56.h,
                   child: 
                   // CachedNetworkImage(
                   //   imageUrl: homeItemModel!.imagePath ?? 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fth-thumbnailer.cdn-si-edu.com%2FF6MN7vfNd8zeHpNYi58PzoC_OAo%3D%2F1000x750%2Ffilters%3Ano_upscale()%2Fhttps%3A%2F%2Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%2Ffiler%2Fb4%2Fc6%2Fb4c65fd0-01ba-4262-9b3d-f16b53bca617%2Fistock-172463472.jpg&tbnid=VbGRavw01Tvs1M&vet=12ahUKEwiiysSC3qaEAxWOVaQEHesNAtAQMygGegQIARB6..i&imgrefurl=https%3A%2F%2Fwww.smithsonianmag.com%2Fhistory%2Fwhen-fresh-air-went-out-fashion-hospitals-180963710%2F&docid=76AS5G-qG6iIRM&w=1000&h=750&q=hospital&ved=2ahUKEwiiysSC3qaEAxWOVaQEHesNAtAQMygGegQIARB6',
