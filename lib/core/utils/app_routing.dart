@@ -91,9 +91,14 @@ abstract class AppRouters {
         builder: (context, state) => const HospitalsScreen(),
       ),
       GoRoute(
-        path: kinfoHospitalScreen,
-        builder: (context, state) =>  InfoHospitalScreen(),
-      ),
+          path: kinfoHospitalScreen,
+          builder: (context, state) {
+            int index =
+                state.extra as int;
+            return InfoHospitalScreen(
+              index: index,
+            );
+          }),
       GoRoute(
         path: kreservationScreen,
         builder: (context, state) => const ReservationScreen(),

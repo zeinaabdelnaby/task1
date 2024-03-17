@@ -5,6 +5,7 @@ import 'package:flutter_grad_project/features/explore/info_hospital/presentation
 
 class HospitalCubit extends Cubit<HospitalState> {
   HospitalCubit(this.hospitalRepository) : super(HospitalLoading());
+  static HospitalCubit get(context) => BlocProvider.of(context);
   HospitalRepository hospitalRepository;
   HospitalModel? hospitalModel;
   getHospitalData() {

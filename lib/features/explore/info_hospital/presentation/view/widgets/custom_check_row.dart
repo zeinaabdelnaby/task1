@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_grad_project/features/explore/info_hospital/data/model/hospital_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomCheckRow extends StatelessWidget {
-  const CustomCheckRow({super.key});
+   CustomCheckRow({this.resource,super.key});
+Resource? resource;
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class CustomCheckRow extends StatelessWidget {
               color: const Color(0xFFFFFFFF),
             )),
         Text(
-          "Lorem ipsum dolor \nsit met, connecter adipescent alit, Carabid",
+          resource?.description??"",
           style: TextStyle(
               color: const Color(0xFF000000),
               fontFamily: "JosefinSans_Light",

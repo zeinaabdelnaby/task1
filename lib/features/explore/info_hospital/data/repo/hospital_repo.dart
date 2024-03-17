@@ -7,7 +7,12 @@ class HospitalRepository {
 
   Future<dynamic> getHospitalData() async {
     Map<String, dynamic> response =
-        await apiServices.get("/api/PatientMobile/Hospital/GetAll?CategoryId&DepartmentId=");
+        await apiServices.get("/api/PatientMobile/Hospital/GetAll"
+        // ,queryParameters:{
+          // "DepartmentId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          // "CategoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        // }
+        );
     print("eeeeeeeeeeeeeeeeee");
     print(response.toString());
 

@@ -50,7 +50,7 @@ class _HospitalsScreenState extends State<HospitalsScreen> {
                     crossAxisSpacing: 0,
                     childAspectRatio: 0.75,
                   ),
-                  itemBuilder: (_, index) => const CustomStack2(),
+                  itemBuilder: (_, index) =>  CustomStack2(index:index),
                   itemCount: 7,
                 ),
               )
