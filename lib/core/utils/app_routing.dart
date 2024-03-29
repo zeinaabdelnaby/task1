@@ -87,12 +87,14 @@ abstract class AppRouters {
         builder: (context, state) => const HomeScreen(),
       ),
       GoRoute(
-        path: khospitalsScreen,
-        builder: (context, state) => const HospitalsScreen(),
-      ),
+          path: khospitalsScreen,
+          builder: (context, state) {
+            final data = state.extra! as Map<String,dynamic>;
+           return  HospitalsScreen(depId: data["depId"],);
+          }),
       GoRoute(
         path: kinfoHospitalScreen,
-        builder: (context, state) =>  InfoHospitalScreen(),
+        builder: (context, state) => InfoHospitalScreen(),
       ),
       GoRoute(
         path: kreservationScreen,

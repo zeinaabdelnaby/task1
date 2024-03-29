@@ -4,8 +4,8 @@ import 'package:flutter_grad_project/features/explore/hospitals/presentation/wid
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HospitalsScreen extends StatefulWidget {
-  const HospitalsScreen({super.key});
-
+  const HospitalsScreen({super.key, required this.depId});
+  final String depId;
   @override
   State<HospitalsScreen> createState() => _HospitalsScreenState();
 }
@@ -13,6 +13,7 @@ class HospitalsScreen extends StatefulWidget {
 class _HospitalsScreenState extends State<HospitalsScreen> {
   @override
   Widget build(BuildContext context) {
+    print("depId ${widget.depId}");
     return Scaffold(
       backgroundColor: const Color(0xFFE9E9E9),
       // bottomNavigationBar: CustomNavBar(),
@@ -50,7 +51,7 @@ class _HospitalsScreenState extends State<HospitalsScreen> {
                     crossAxisSpacing: 0,
                     childAspectRatio: 0.75,
                   ),
-                  itemBuilder: (_, index) => const CustomStack2(),
+                  itemBuilder: (_, index) =>  CustomStack2(depId: widget.depId,),
                   itemCount: 7,
                 ),
               )
