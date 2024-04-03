@@ -1,8 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_grad_project/core/api/dio_consumer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_grad_project/core/api/dio_consumer.dart';
 import 'package:flutter_grad_project/core/database/cache_helper.dart';
@@ -33,25 +30,7 @@ class HealthCareConnectionApp extends StatelessWidget {
             create: (context) =>
                 HospitalsCubit(HospitalsRepository(DioConsumer(dio: Dio()))),
           ),
-        ],
-        child: ScreenUtilInit(
-            designSize: const Size(375, 812),
-            minTextAdapt: true,
-            splitScreenMode: true,
-            builder: (_, child) {
-              return MaterialApp.router(
-                theme: ThemeData.light().copyWith(
-                    scaffoldBackgroundColor: const Color(0xffE9E9E9),
-                    textTheme: const TextTheme(
-                        bodyMedium: TextStyle(
-                            fontFamily: 'josefinSans', color: Colors.black))),
-                debugShowCheckedModeBanner: false,
-                routerConfig: AppRouters.router,
-              );
-            }));
-    return MultiBlocProvider(
-        providers: [
-          BlocProvider(
+           BlocProvider(
             create: (context) =>
                 HomeCubit(HomeRepository(DioConsumer(dio: Dio()))),
           ),
@@ -71,5 +50,6 @@ class HealthCareConnectionApp extends StatelessWidget {
                 routerConfig: AppRouters.router,
               );
             }));
+  
   }
 }
