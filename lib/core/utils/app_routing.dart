@@ -8,6 +8,9 @@ import 'package:flutter_grad_project/features/auth/feature/sign_up/presintation/
 import 'package:flutter_grad_project/features/auth/feature/user_required_data/presentation/screen/medical_record.dart';
 import 'package:flutter_grad_project/features/auth/feature/user_required_data/presentation/screen/user_data_form.dart';
 import 'package:flutter_grad_project/features/booking_done/presentation/screen/booking_done_screen.dart';
+import 'package:flutter_grad_project/features/explore/home/presentation/screen/home_screen.dart';
+import 'package:flutter_grad_project/features/explore/hospitals/presentation/screen/hospitals_screen.dart';
+import 'package:flutter_grad_project/features/explore/info_hospital/presentation/view/screen/info_hospital_screen.dart';
 import 'package:flutter_grad_project/features/explore/hospitals/presentation/view/screen/hospitals_screen.dart';
 import 'package:flutter_grad_project/features/explore/home/presentation/view/screen/home_screen.dart';
 import 'package:flutter_grad_project/features/explore/hospitals/presentation/view/screen/hospitals_screen.dart';
@@ -94,6 +97,14 @@ abstract class AppRouters {
            return  HospitalsScreen(depId: data["depId"],);
           }),
       GoRoute(
+          path: kinfoHospitalScreen,
+          builder: (context, state) {
+            int index =
+                state.extra as int;
+            return InfoHospitalScreen(
+              index: index,
+            );
+          }),
         path: kinfoHospitalScreen,
         builder: (context, state) => InfoHospitalScreen(),
       ),

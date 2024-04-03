@@ -6,9 +6,8 @@ import 'package:flutter_grad_project/core/database/cache_helper.dart';
 import 'package:flutter_grad_project/features/explore/home/data/repo/home_repo.dart';
 import 'package:flutter_grad_project/core/services/services_locator.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
-import 'package:flutter_grad_project/features/explore/hospitals/data/repo/hospitals_repo.dart';
-import 'package:flutter_grad_project/features/explore/hospitals/presentation/view_model/hospitals_cubit.dart';
-import 'package:flutter_grad_project/features/explore/home/presentation/view_model/home_cubit/home_cubit.dart';
+import 'package:flutter_grad_project/features/explore/info_hospital/data/repo/hospital_repo.dart';
+import 'package:flutter_grad_project/features/explore/info_hospital/presentation/view_model/hospital_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
@@ -28,11 +27,7 @@ class HealthCareConnectionApp extends StatelessWidget {
         providers: [
           BlocProvider(
             create: (context) =>
-                HospitalsCubit(HospitalsRepository(DioConsumer(dio: Dio()))),
-          ),
-           BlocProvider(
-            create: (context) =>
-                HomeCubit(HomeRepository(DioConsumer(dio: Dio()))),
+                HospitalCubit(HospitalRepository(DioConsumer(dio: Dio()))),
           ),
         ],
         child: ScreenUtilInit(
@@ -50,6 +45,5 @@ class HealthCareConnectionApp extends StatelessWidget {
                 routerConfig: AppRouters.router,
               );
             }));
-  
   }
 }
