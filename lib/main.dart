@@ -1,8 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_grad_project/core/api/dio_consumer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_grad_project/core/api/dio_consumer.dart';
 import 'package:flutter_grad_project/core/database/cache_helper.dart';
@@ -14,6 +11,8 @@ import 'package:flutter_grad_project/features/explore/hospitals/data/repo/hospit
 import 'package:flutter_grad_project/features/explore/hospitals/presentation/view_model/hospitals_cubit.dart';
 import 'package:flutter_grad_project/features/explore/info_hospital/data/repo/hospital_repo.dart';
 import 'package:flutter_grad_project/features/explore/info_hospital/presentation/view_model/hospital_cubit.dart';
+import 'package:flutter_grad_project/features/reception/reservation/data/repo/reservation_repo.dart';
+import 'package:flutter_grad_project/features/reception/reservation/presentation/view_model/reservation_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
@@ -42,6 +41,10 @@ class HealthCareConnectionApp extends StatelessWidget {
            BlocProvider(
             create: (context) =>
                 HospitalCubit(HospitalRepository(DioConsumer(dio: Dio()))),
+          ),
+           BlocProvider(
+            create: (context) =>
+                ReservationCubit(ReservationRepository(DioConsumer(dio: Dio()))),
           ),
         ],
    child:  ScreenUtilInit(
