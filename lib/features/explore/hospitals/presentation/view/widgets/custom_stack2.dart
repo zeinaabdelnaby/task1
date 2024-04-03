@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_grad_project/core/widgets/custom_read_more_button.dart';
 import 'package:flutter_grad_project/core/widgets/custom_starRow.dart';
-import 'package:flutter_grad_project/features/explore/home/data/model/home_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomStack2 extends StatelessWidget {
-  const CustomStack2({super.key, required this.depId});
-  final String depId;
+  const CustomStack2({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
