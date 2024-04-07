@@ -3,7 +3,7 @@ import 'package:flutter_grad_project/features/explore/info_hospital/data/model/h
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomCheckRow extends StatelessWidget {
-   CustomCheckRow({this.resource,super.key});
+   CustomCheckRow({this.resource,required String depId,required String hospId,super.key});
 Resource? resource;
 
 

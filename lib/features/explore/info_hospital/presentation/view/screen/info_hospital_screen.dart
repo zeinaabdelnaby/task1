@@ -16,21 +16,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class InfoHospitalScreen extends StatefulWidget {
-  const InfoHospitalScreen({super.key, required this.index});
-  final int index;
+  const InfoHospitalScreen({super.key, required this.depId, this.resource});
+  // final int index;
+  final Resource? resource;
+  final String depId;
   @override
   State<InfoHospitalScreen> createState() => _InfoHospitalScreenState();
 }
 
 class _InfoHospitalScreenState extends State<InfoHospitalScreen> {
   void initState() {
- BlocProvider.of<HospitalCubit>(context).getHospitalData();
+    BlocProvider.of<HospitalCubit>(context).getHospitalData();
     super.initState();
   }
 
   int currentIndex = 0;
   bool isLoading = true;
-
 
   final items = [
     "assets/images/hospital2.png",
@@ -155,7 +156,8 @@ class _InfoHospitalScreenState extends State<InfoHospitalScreen> {
                       Row(
                         children: [
                           Text(
-                            cubit.hospitalModel?.resource![widget.index].name?? "",
+                            widget.resource?.name ??
+                                "",
                             style: TextStyle(
                                 fontFamily: "JosefinSans_SemiBold",
                                 fontWeight: FontWeight.w400,
@@ -194,13 +196,16 @@ class _InfoHospitalScreenState extends State<InfoHospitalScreen> {
                                 size: 15.sp,
                                 color: const Color(0xFFFFFFFF),
                               )),
-                          Text(
-                            cubit.hospitalModel?.resource![widget.index].description?? "",
-                            style: TextStyle(
-                                color: const Color(0xFF000000),
-                                fontFamily: "JosefinSans_Light",
-                                fontWeight: FontWeight.w300,
-                                fontSize: 11.sp),
+                          Expanded(
+                            child: Text(
+                              widget.resource?.description ??
+                                  "",
+                              style: TextStyle(
+                                  color: const Color(0xFF000000),
+                                  fontFamily: "JosefinSans_Light",
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 11.sp),
+                            ),
                           )
                         ],
                       ),
@@ -262,7 +267,7 @@ class _InfoHospitalScreenState extends State<InfoHospitalScreen> {
                             ),
                             onPressed: () {
                               GoRouter.of(context)
-                                  .push(AppRouters.kreservationScreen);
+                                  .push(AppRouters.kreservationScreen,extra:{"depId":widget.depId,"hospId":widget.resource?.id});
                             },
                             style: ElevatedButton.styleFrom(
                               side: BorderSide(

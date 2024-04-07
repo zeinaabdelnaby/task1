@@ -8,11 +8,27 @@ class ReservationCubit extends Cubit<ReservationState> {
   ReservationRepository reservationRepository;
   ReservationModel? reservationModel;
 
-    Future reservationCubit() async {
+  Future reservationCubit(
+      {String? hospitalId,
+      String? departmentId,
+      String? date,
+      String? patientId}) async {
     emit(ReservationLoading());
-
-    Map<String, dynamic> response = await reservationRepository.addData();
+    print("add date");
+    Map<String, dynamic> response = await reservationRepository.addData(
+        hospitalId: hospitalId,
+        departmentId: departmentId,
+        date: date,
+        patientId: patientId);
+        Map<String, dynamic> response2 = await reservationRepository.bookApp(
+        hospitalId: hospitalId,
+        departmentId: departmentId,
+        date: date,
+        patientId: patientId);
+    print("response : $response");
     if (response['success']) {
+      reservationModel = ReservationModel.fromJson(response);
+      print("object : ${reservationModel?.resource}");
       emit(ReservationSuccess());
     } else {
       emit(ReservationFailure());
