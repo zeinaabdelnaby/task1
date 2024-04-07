@@ -1,8 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
-import 'package:flutter_grad_project/core/widgets/custom_read_more_button.dart';
-import 'package:flutter_grad_project/core/widgets/custom_starRow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
@@ -47,7 +44,7 @@ class CustomItem extends StatelessWidget {
                               },
                               fit: BoxFit.cover,
                             ))),
-                    SizedBox(
+                    const SizedBox(
                       width: 15,
                     ),
                     Padding(
@@ -58,7 +55,7 @@ class CustomItem extends StatelessWidget {
                           Text(
                             homeItemModel!.name ?? '',
                             style: TextStyle(
-                                color: Color(0xFF0165FC),
+                                color: const Color(0xFF0165FC),
                                 fontWeight: FontWeight.w400,
                                 fontSize: 12.sp,
                                 fontFamily: 'JosefinSans_Bold'),
@@ -81,7 +78,7 @@ class CustomItem extends StatelessWidget {
                   ],
                 ),
               ),
-              Divider(
+              const Divider(
                 height: 0.1,
                 color: Color.fromARGB(255, 180, 180, 180),
               )

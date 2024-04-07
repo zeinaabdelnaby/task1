@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_grad_project/core/widgets/custom_read_more_button.dart';
@@ -92,23 +91,22 @@ class CustomStack extends StatelessWidget {
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(20.0),
                 child: SizedBox(
-                  width: 107.56.w,
-                  height: 132.56.h,
-                  child: 
-                  // CachedNetworkImage(
-                  //   imageUrl: homeItemModel!.imagePath ?? 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fth-thumbnailer.cdn-si-edu.com%2FF6MN7vfNd8zeHpNYi58PzoC_OAo%3D%2F1000x750%2Ffilters%3Ano_upscale()%2Fhttps%3A%2F%2Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%2Ffiler%2Fb4%2Fc6%2Fb4c65fd0-01ba-4262-9b3d-f16b53bca617%2Fistock-172463472.jpg&tbnid=VbGRavw01Tvs1M&vet=12ahUKEwiiysSC3qaEAxWOVaQEHesNAtAQMygGegQIARB6..i&imgrefurl=https%3A%2F%2Fwww.smithsonianmag.com%2Fhistory%2Fwhen-fresh-air-went-out-fashion-hospitals-180963710%2F&docid=76AS5G-qG6iIRM&w=1000&h=750&q=hospital&ved=2ahUKEwiiysSC3qaEAxWOVaQEHesNAtAQMygGegQIARB6',
-                  //   errorWidget: (context, url, error) =>
-                  //       Image.asset('assets/images/hospital2.png'),
-                  //   fit: BoxFit.cover,
-                  // ),
-                  Image.network(
-                    homeItemModel!.imagePath ?? '',
-                    errorBuilder: (context, error, stackTrace) {
-                      return Image.asset('assets/images/hospital2.png');
-                    },
-                    fit: BoxFit.cover,
-                  )
-                )),
+                    width: 107.56.w,
+                    height: 132.56.h,
+                    child:
+                        // CachedNetworkImage(
+                        //   imageUrl: homeItemModel!.imagePath ?? 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fth-thumbnailer.cdn-si-edu.com%2FF6MN7vfNd8zeHpNYi58PzoC_OAo%3D%2F1000x750%2Ffilters%3Ano_upscale()%2Fhttps%3A%2F%2Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%2Ffiler%2Fb4%2Fc6%2Fb4c65fd0-01ba-4262-9b3d-f16b53bca617%2Fistock-172463472.jpg&tbnid=VbGRavw01Tvs1M&vet=12ahUKEwiiysSC3qaEAxWOVaQEHesNAtAQMygGegQIARB6..i&imgrefurl=https%3A%2F%2Fwww.smithsonianmag.com%2Fhistory%2Fwhen-fresh-air-went-out-fashion-hospitals-180963710%2F&docid=76AS5G-qG6iIRM&w=1000&h=750&q=hospital&ved=2ahUKEwiiysSC3qaEAxWOVaQEHesNAtAQMygGegQIARB6',
+                        //   errorWidget: (context, url, error) =>
+                        //       Image.asset('assets/images/hospital2.png'),
+                        //   fit: BoxFit.cover,
+                        // ),
+                        Image.network(
+                      homeItemModel!.imagePath ?? '',
+                      errorBuilder: (context, error, stackTrace) {
+                        return Image.asset('assets/images/hospital2.png');
+                      },
+                      fit: BoxFit.cover,
+                    ))),
           ),
           Positioned(
             left: -10,
