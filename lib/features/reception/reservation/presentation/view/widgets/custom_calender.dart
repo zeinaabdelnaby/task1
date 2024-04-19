@@ -1,16 +1,21 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_grad_project/core/database/cache_helper.dart';
 import 'package:flutter_grad_project/features/reception/reservation/presentation/view_model/reservation_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
+import '../../view_model/reservation_states.dart';
+
 /// My app class to display the date range picker
 class CustomCalender extends StatefulWidget {
-  const CustomCalender(
-      {super.key,
-      required this.natId,
-      required this.onPost,
-      required this.hospitalId,
-      required this.departmentId});
+  const CustomCalender({
+    super.key,
+    required this.natId,
+    required this.onPost,
+    required this.hospitalId,
+    required this.departmentId,
+  });
+
   final String natId;
   final VoidCallback onPost;
   final String hospitalId;
@@ -25,15 +30,15 @@ class MyAppState extends State<CustomCalender> {
   GlobalKey<ScaffoldState> scaffoldkey = new GlobalKey<ScaffoldState>();
 
   String _selectedDate = '';
-  final String _dateCount = '';
+
+  // final String _dateCount = '';
+
   // String _range = '';
   // String _rangeCount = '';
 
-  void _onSelectionChanged(
+  void onSelectionChanged(
       DateRangePickerSelectionChangedArgs args, BuildContext context) {
     if (widget.natId == '') {
-      //TODO:show snackbar(enter natId first)
-
       scaffoldkey.currentState!.showBottomSheet(((context) => Container(
             height: 70,
             width: 1000,
@@ -50,19 +55,22 @@ class MyAppState extends State<CustomCalender> {
       setState(() {
         _selectedDate = args.value.toString();
       });
+      CacheHelper().saveData(key: 'selectDate', value: _selectedDate);
       print("selected date : $_selectedDate");
-      BlocProvider.of<ReservationCubit>(context).reservationCubit(
-          hospitalId: widget.hospitalId,
-          departmentId: widget.departmentId,
-          date: _selectedDate.toString(),
-          patientId: widget.natId
-          );
+      BlocProvider.of<ReservationCubit>(context).getAvailableTime(
+        hospitalId: widget.hospitalId,
+        departmentId: widget.departmentId,
+        date: _selectedDate.toString(),
+        patientId: widget.natId,
+      );
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return BlocConsumer<ReservationCubit, ReservationState>(
+      listener: (context, state) {},
+      builder: (BuildContext context, state) => Scaffold(
         key: scaffoldkey,
         backgroundColor: const Color(0xFFE2E2E2),
         body: Container(
@@ -80,14 +88,16 @@ class MyAppState extends State<CustomCalender> {
                   selectionColor: const Color(0xFF0165FC),
                   todayHighlightColor: const Color(0xFF0165FC),
                   onSelectionChanged: (args) {
-                    _onSelectionChanged(args, context);
+                    onSelectionChanged(args, context);
                   },
                   initialSelectedDate: DateTime.now(),
                 ),
               )
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
 
@@ -100,7 +110,6 @@ class MyAppState extends State<CustomCalender> {
 //     ),
 //   );
 // }
-
 
 // {
 //   "patientId": "9d3d090e-5a0b-4b2c-08a3-08dc3ac12dd4",

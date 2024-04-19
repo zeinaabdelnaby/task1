@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_grad_project/core/database/cache_helper.dart';
 import 'package:flutter_grad_project/core/utils/app_routing.dart';
 import 'package:flutter_grad_project/core/widgets/custom_page_address.dart';
 import 'package:flutter_grad_project/core/widgets/custom_subtitle.dart';
-import 'package:flutter_grad_project/features/explore/info_hospital/presentation/view_model/hospital_cubit.dart';
 import 'package:flutter_grad_project/features/reception/reservation/presentation/view/widgets/custom_calender.dart';
 import 'package:flutter_grad_project/features/reception/reservation/presentation/view_model/reservation_cubit.dart';
 import 'package:flutter_grad_project/features/reception/reservation/presentation/view_model/reservation_states.dart';
@@ -14,6 +13,7 @@ import 'package:go_router/go_router.dart';
 class ReservationScreen extends StatefulWidget {
   const ReservationScreen(
       {super.key, required this.depId, required this.hospId});
+
   final String depId, hospId;
 
   @override
@@ -24,10 +24,6 @@ DateTime _currentdate = DateTime.now();
 TextEditingController nadIdController = TextEditingController();
 
 class _ReservationScreenState extends State<ReservationScreen> {
-  void initState() {
-    super.initState();
-  }
-
   bool isLoading = true;
 
   @override
@@ -40,7 +36,6 @@ class _ReservationScreenState extends State<ReservationScreen> {
         isLoading = false;
       }
     }, builder: (BuildContext context, state) {
-      var cubit = context.read<ReservationCubit>();
       return Scaffold(
         backgroundColor: Colors.white,
         body: Padding(
@@ -110,15 +105,17 @@ class _ReservationScreenState extends State<ReservationScreen> {
                       height: 15,
                     ),
                     Center(
-                        child: SizedBox(
-                            width: 300,
-                            height: 200,
-                            child: CustomCalender(
-                              natId: nadIdController.text,
-                              onPost: onPost,
-                              hospitalId: widget.hospId,
-                              departmentId: widget.depId,
-                            )))
+                      child: SizedBox(
+                        width: 300,
+                        height: 200,
+                        child: CustomCalender(
+                          natId: nadIdController.text,
+                          onPost: onPost,
+                          hospitalId: widget.hospId,
+                          departmentId: widget.depId,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(
@@ -130,7 +127,6 @@ class _ReservationScreenState extends State<ReservationScreen> {
                     const CustomSubTitle(
                       text: 'Select time',
                     ),
-
                     Center(
                       child: Scrollbar(
                         thickness: 10,
@@ -138,9 +134,12 @@ class _ReservationScreenState extends State<ReservationScreen> {
                           width: 300,
                           height: 150,
                           child: ListView.builder(
-                            itemBuilder: (_, index) =>  Times(time : cubit.reservationModel?.resource?[index]??""),
-                            itemCount:
-                                cubit.reservationModel?.resource?.length ?? 0,
+                            itemBuilder: (_, index) => Times(
+                                time: ReservationCubit.get(context)
+                                    .availableTimes[index]),
+                            itemCount: ReservationCubit.get(context)
+                                .availableTimes
+                                .length,
                           ),
                         ),
                       ),
@@ -163,8 +162,16 @@ class _ReservationScreenState extends State<ReservationScreen> {
                     ),
                     InkWell(
                       onTap: () {
-                        GoRouter.of(context)
-                            .push(AppRouters.kbookingDoneScreen);
+                        if (CacheHelper().getData(key: 'selectDate') != null) {
+                          ReservationCubit.get(context).bookNow(
+                            hospitalId: widget.hospId,
+                            departmentId: widget.depId,
+                            patientId: nadIdController.text,
+                            date: CacheHelper().getData(key: 'selectDate'),
+                          );
+                          GoRouter.of(context)
+                              .push(AppRouters.kbookingDoneScreen);
+                        }
                       },
                       child: Container(
                         height: 50.0,
@@ -196,7 +203,8 @@ class _ReservationScreenState extends State<ReservationScreen> {
 
 class Times extends StatelessWidget {
   const Times({
-    super.key, required this.time,
+    super.key,
+    required this.time,
   });
 
   final String time;
@@ -219,7 +227,8 @@ class Times extends StatelessWidget {
             child: Center(
                 child: Text(
               time,
-              style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
+              style:
+                  const TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
             )),
           ),
         ));
